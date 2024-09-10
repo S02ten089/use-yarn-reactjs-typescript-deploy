@@ -7,7 +7,7 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <h1>Chat Application</h1>
-      <Chat />
+      {/* <Chat /> */}
     </div>
   );
 };
