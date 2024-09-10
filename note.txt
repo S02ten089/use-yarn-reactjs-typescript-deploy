@@ -1,0 +1,16 @@
+use install yarn
+npm install firebase
+
+setup 
+run project yarn start 
+npm i --force
+
+header:
+- setup: -- (img[detail-1]color) (img[detail-2]color) (img[detail-3]color) (login/resgin) (order)
+- api:
+-- color
+-- img use base64
+-- detail
+-- login
+-- resgin
+-- order

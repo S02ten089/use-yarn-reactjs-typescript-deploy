@@ -1,0 +1,3 @@
+initializeApp: Khởi tạo ứng dụng Firebase.
+getDatabase: Lấy tham chiếu đến dịch vụ Realtime Database.
+ref, onValue, push: Các phương thức này được sử dụng để thao tác với dữ liệu trong Realtime Database.
