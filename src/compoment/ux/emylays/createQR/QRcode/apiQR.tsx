@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { QRCodeCanvas } from 'qrcode.react';
-import  "../css/qrcode/qrcode.css";
-const QRcode = () => {
-  const [linkDataList, setLinkDataList] = useState([]);
+import { QRCodeSVG } from 'qrcode.react';  // Sử dụng QRCodeSVG thay vì QRCodeCanvas
+import "../css/qrcode/qrcode.css";
+
+// Định nghĩa kiểu dữ liệu cho mỗi item trong danh sách linkDataList
+interface LinkData {
+  id: string;
+  nameLinkQR: string;
+  type: string;
+}
+
+const QRcode: React.FC = () => {
+  const [linkDataList, setLinkDataList] = useState<LinkData[]>([]);  // Khai báo kiểu dữ liệu cho state
 
   useEffect(() => {
     // Giả sử API của bạn có endpoint là /api/getLinks
@@ -23,7 +31,8 @@ const QRcode = () => {
         linkDataList.map((item) => (
           <div key={item.id} className="qr-item">
             <div className="qr-code-wrapper">
-              <QRCodeCanvas value={item.nameLinkQR} className="qr-code" />
+              {/* Sử dụng QRCodeSVG thay vì QRCodeCanvas */}
+              <QRCodeSVG value={item.nameLinkQR} className="qr-code" />
             </div>
             <div className="qr-info">
               <h2 className="qr-id">ID: {item.id}</h2>
