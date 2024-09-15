@@ -6,6 +6,7 @@ npm install sass
 npm install sass-loader css-loader style-loader
 npm install qrcode.react
 yarn add qrcode.react
+yarn add xlsx
 
 setup 
 run project yarn start 
