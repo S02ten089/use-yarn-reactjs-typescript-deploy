@@ -1,0 +1,78 @@
+// Định nghĩa biến
+$primary-bg-color: #f8f8f8;
+$border-color: #ddd;
+$primary-text-color: #333;
+$login-btn-bg: #333;
+$signup-btn-bg: #4CAF50;
+$btn-color: #fff;
+$btn-padding: 10px 15px;
+$nav-link-font-size: 18px;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $primary-bg-color;
+  border-bottom: 1px solid $border-color;
+
+  .logo {
+    img {
+      width: 150px;
+      height: auto; // Đảm bảo ảnh không bị biến dạng
+    }
+  }
+
+  .nav-menu {
+    ul {
+      list-style: none; // Thay thế list-style-type với list-style
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      li {
+        margin: 0 15px;
+
+        a {
+          text-decoration: none;
+          color: $primary-text-color;
+          font-size: $nav-link-font-size;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: darken($primary-text-color, 10%); // Hiệu ứng hover cho liên kết
+          }
+        }
+      }
+    }
+  }
+
+  .auth-buttons {
+    display: flex;
+    align-items: center;
+
+    .login-btn,
+    .signup-btn {
+      background-color: $login-btn-bg;
+      color: $btn-color;
+      border: none;
+      padding: $btn-padding;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 4px; // Bo góc cho nút
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: lighten($login-btn-bg, 10%); // Hiệu ứng hover cho nút
+      }
+    }
+
+    .signup-btn {
+      background-color: $signup-btn-bg;
+
+      &:hover {
+        background-color: lighten($signup-btn-bg, 10%); // Hiệu ứng hover cho nút đăng ký
+      }
+    }
+  }
+}

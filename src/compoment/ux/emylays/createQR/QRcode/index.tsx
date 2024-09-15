@@ -1,5 +1,5 @@
 import React from 'react';
-import { QRCodeSVG } from 'qrcode.react';
+import { QRCodeSVG } from "qrcode.react";
 
 const AppQr: React.FC = () => {
   const qrValue = "https://www.vtt-s02.com"; // giá trị cho mã QR

@@ -6,11 +6,13 @@ import Base64ToImage from './ux/emylays/base64/base64toimg';
 
 import ImageComponent from '../showimg/test/img';
 // import header
+import UI from './ui';
 // import fooder
 
 const App: React.FC = () => {
   return (
     <div className="App">
+      <UI/>
       <h1>Chat Application</h1>
       {/* <Chat /> */}
       <QR/>
