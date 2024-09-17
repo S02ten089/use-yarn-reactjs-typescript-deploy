@@ -1,5 +1,5 @@
 import React from 'react';
-import { useAuth } from '../../hooks/useAuth';
+import { useAuth } from '../../hooks/auth-hook/useAuth';
 
 const AuthComponent: React.FC = ({ children }:string|any) => {
   const auth = useAuth();

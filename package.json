@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@googlemaps/markerclusterer": "^2.5.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,6 +11,7 @@
     "@types/node": "^16.18.108",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
+    "@vis.gl/react-google-maps": "^1.2.0",
     "axios": "^1.7.7",
     "firebase": "^10.13.1",
     "qrcode.react": "^4.0.1",
@@ -18,9 +20,7 @@
     "react-scripts": "5.0.1",
     "typescript": "^5.6.2",
     "web-vitals": "^2.1.4",
-    "xlsx": "^0.18.5",
-    "@googlemaps/markerclusterer": "^2.5.1",
-    "@vis.gl/react-google-maps": "latest"
+    "xlsx": "^0.18.5"
   },
   "scripts": {
     "start": "react-scripts start",
