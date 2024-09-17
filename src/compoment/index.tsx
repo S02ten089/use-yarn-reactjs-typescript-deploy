@@ -7,6 +7,7 @@ import ExcelReader from './ux/xlsx';
 import { Circle } from './ux/mapGoogle/circle';
 import ImageComponent from '../showimg/test/img';
 import Ero from '../notification/null/Ero';
+import MapGoogle from './map';
 // import header
 import UI from './ui';
 // import fooder
@@ -29,6 +30,8 @@ const App: React.FC = () => {
       <Circle/> */}
       <br />
       <Ero/>
+      <br />
+      <MapGoogle/>
       <div>
         <ImageComponent/>
       </div>

@@ -1,0 +1,10 @@
+-Axios và TypeScript:
+Sử dụng AxiosRequestConfig để xác định cấu hình của Axios, giúp TypeScript hiểu rõ cấu trúc dữ liệu của yêu cầu.
+Đảm bảo bạn sử dụng axios từ thư viện Axios chứ không phải require.
+
+-Hook useEffect:
+Dùng useEffect để thực hiện yêu cầu khi component được render.
+async/await được sử dụng để xử lý Promise một cách rõ ràng và dễ đọc hơn.
+
+-Xử lý lỗi:
+try/catch được sử dụng để xử lý các trường hợp lỗi khi gửi yêu cầu.

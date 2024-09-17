@@ -12,7 +12,14 @@ setup
 run project yarn start 
 npm i --force
 
-
+---
+googleMap
+├─ @googlemaps/js-api-loader@1.16.2
+├─ @react-google-maps/api@2.19.3
+├─ @react-google-maps/infobox@2.19.2
+├─ @react-google-maps/marker-clusterer@2.19.2
+├─ @types/google.maps@3.55.2
+---
 header:
 - setup: -- (img[detail-1]color) (img[detail-2]color) (img[detail-3]color) (login/resgin) (order)
 - api:
