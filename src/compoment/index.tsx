@@ -6,6 +6,7 @@ import Base64ToImage from './ux/base64/base64toimg';
 import ExcelReader from './ux/xlsx';
 import { Circle } from './ux/mapGoogle/circle';
 import ImageComponent from '../showimg/test/img';
+import Ero from '../notification/null/Ero';
 // import header
 import UI from './ui';
 // import fooder
@@ -26,6 +27,8 @@ const App: React.FC = () => {
       <br />
       {/* Ero -- Wanting
       <Circle/> */}
+      <br />
+      <Ero/>
       <div>
         <ImageComponent/>
       </div>
