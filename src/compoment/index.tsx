@@ -4,7 +4,7 @@ import QR from './ux/createQR/qr';
 import ImageToBase64 from './ux/base64/base64';
 import Base64ToImage from './ux/base64/base64toimg';
 import ExcelReader from './ux/xlsx';
-
+import { Circle } from './ux/mapGoogle/circle';
 import ImageComponent from '../showimg/test/img';
 // import header
 import UI from './ui';
@@ -23,6 +23,9 @@ const App: React.FC = () => {
       <Base64ToImage/>
       <br />
       <ExcelReader/>
+      <br />
+      {/* Ero -- Wanting
+      <Circle/> */}
       <div>
         <ImageComponent/>
       </div>
