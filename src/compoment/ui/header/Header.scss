@@ -1,0 +1,92 @@
+$primary-bg-color: #f8f8f8;
+$primary-color: #333;
+$hover-color: #4CAF50;
+$btn-bg-color: #333;
+$btn-text-color: #fff;
+$border-color: #ddd;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: $primary-bg-color;
+  border-bottom: 1px solid $border-color;
+
+  .logo img {
+    width: 150px;
+  }
+
+  .nav-menu {
+    ul {
+      list-style-type: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+
+      li {
+        margin: 0 15px;
+
+        a {
+          text-decoration: none;
+          color: $primary-color;
+          font-size: 18px;
+
+          &:hover {
+            color: $hover-color;
+          }
+        }
+      }
+    }
+  }
+
+  .auth-buttons {
+    .login-btn, .signup-btn {
+      background-color: $btn-bg-color;
+      color: $btn-text-color;
+      border: none;
+      padding: 10px 15px;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+    }
+
+    .signup-btn {
+      background-color: $hover-color;
+    }
+  }
+}
+
+// Media query for mobile responsiveness
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .nav-menu {
+      ul {
+        flex-direction: column;
+        width: 100%;
+        
+        li {
+          margin: 10px 0;
+        }
+      }
+    }
+
+    .auth-buttons {
+      margin-top: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      .login-btn, .signup-btn {
+        width: 48%;
+      }
+    }
+  }
+}

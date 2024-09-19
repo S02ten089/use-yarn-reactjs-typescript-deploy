@@ -7,6 +7,7 @@ npm install sass-loader css-loader style-loader
 npm install qrcode.react
 yarn add qrcode.react
 yarn add xlsx
+yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
 
 setup 
 run project yarn start 
