@@ -10,11 +10,13 @@ yarn add xlsx
 yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
 yarn add react-icons
 yarn add next react react-dom
+yarn add react-router-dom
 
 setup 
 run project yarn start 
 npm i --force
-
+node -v -- v20.11.1
+npm -v -- 10.5.0
 ---
 googleMap
 ├─ @googlemaps/js-api-loader@1.16.2
