@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header';
 import UiUseCka from './header/UiUseFramworkCka/App';
 import RouterH from './header/routerHeader/routerH-menu';
+import Footer from './fooder/footer';
 
 const UI: React.FC = () => {
   return (
@@ -11,15 +12,15 @@ const UI: React.FC = () => {
       </div>
       <br />
       <div className="App">
-        <Header />
+        {/* <Header />   */}
         <main>
           <h1>Welcome to My Website</h1>
-          {/* Các nội dung khác của trang */}
+          <div>
+            <p>use router + framwork cka</p>
+            <RouterH/>
+          </div>
         </main>
-      </div>
-      <div>
-        <p>use router + framwork cka</p>
-        <RouterH></RouterH>
+        <Footer/>
       </div>
     </div>
   );

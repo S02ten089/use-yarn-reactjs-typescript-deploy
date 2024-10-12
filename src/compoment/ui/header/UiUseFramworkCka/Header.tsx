@@ -31,10 +31,10 @@ const Header: React.FC = () => {
           // margin: 0,
           // padding: 0
           }}>
-          <li><a className={styles.aLiHerder} href="#home">Trang Chủ</a></li>
-          <li><a className={styles.aLiHerder} href="#about">Giới Thiệu</a></li>
-          <li><a className={styles.aLiHerder} href="#services">Dịch Vụ</a></li>
-          <li><a className={styles.aLiHerder} href="#contact">Liên Hệ</a></li>
+          <li><a className={styles.aLiHerder} href="/home">Trang Chủ</a></li>
+          <li><a className={styles.aLiHerder} href="/about">Giới Thiệu</a></li>
+          <li><a className={styles.aLiHerder} href="/services">Dịch Vụ</a></li>
+          <li><a className={styles.aLiHerder} href="/contact">Liên Hệ</a></li>
         </ul>
       </nav>
       <div className={styles.authButtons}>

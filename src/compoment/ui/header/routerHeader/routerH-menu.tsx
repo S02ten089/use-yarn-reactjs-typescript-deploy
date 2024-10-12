@@ -5,18 +5,20 @@ import { ChakraProvider, Box, Flex, Button, Spinner } from '@chakra-ui/react';
 // import Contact from '../menu/contact/Contact';
 import React, { Suspense } from 'react';
 
-const Home = React.lazy(() => import('../menu/home/Home'));
-const Contact = React.lazy(() => import('../menu/contact/Contact'));
+const Home = React.lazy(() => import('../path/home/Home'));
+const Contact = React.lazy(() => import('../path/contact/Contact'));
+const Qr = React.lazy(() => import('../path/qr/Qr'));
+const Ux = React.lazy(() => import('../path/UX/Ux'));
 
 const RouterH: React.FC = () => {
     return (
       <ChakraProvider>
         <Router>
           {/* Header navigation */}
-          <Box bg="teal.500" p={4}>
+          {/* <Box bg="teal.500" p={4}>
             <Flex justify="space-between" align="center">
               <Box fontSize="2xl" color="white">
-                {/* Logo */}
+
               <Link to="/">Logo</Link>
               </Box>
               <Flex>
@@ -31,7 +33,7 @@ const RouterH: React.FC = () => {
                 </Button>
               </Flex>
             </Flex>
-          </Box>
+          </Box> */}
   
           {/* Routes với Suspense */}
         <Box p={4}>
@@ -40,6 +42,8 @@ const RouterH: React.FC = () => {
               <Route path="/" element={<Home />} />
               {/* <Route path="/about" element={<About />} /> */}
               <Route path="/contact" element={<Contact />} />
+              <Route path='/qr' element={<Qr/>}/>
+              <Route path='/ux' element={<Ux/>}/>
             </Routes>
           </Suspense>
         </Box>
