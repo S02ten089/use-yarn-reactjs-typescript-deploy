@@ -1,0 +1,1 @@
+"use strict";exports.id=461,exports.ids=[461],exports.modules={1321:(r,s,e)=>{e.r(s),e.d(s,{default:()=>c});var n=e(2051);e(6269);var t=e(422);let c=()=>(0,n.jsxs)(t.xu,{children:[n.jsx("h1",{children:"Trang chủ"}),n.jsx("p",{children:"Ch\xe0o mừng bạn đến với trang chủ của ch\xfang t\xf4i."})]})}};

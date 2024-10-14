@@ -1,0 +1,11 @@
+└── pages/
+    ├── index.tsx
+    ├── about.tsx
+    └── contact.tsx
+
+    
+└── app/
+    ├── layout.tsx
+    ├── page.tsx
+    └── about/
+        └── page.tsx

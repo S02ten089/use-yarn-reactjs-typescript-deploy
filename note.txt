@@ -1,10 +1,34 @@
 use install yarn
 npm install firebase
+npm install -g firebase-tools
+npm install axios
+npm install sass
+npm install sass-loader css-loader style-loader
+npm install qrcode.react
+yarn add qrcode.react
+yarn add xlsx
+yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
+yarn add react-icons
+yarn add next react react-dom
+yarn add react-router-dom
+yarn add --dev @next/eslint-plugin-next
+yarn add sharp
 
+
+"use client"
 setup 
 run project yarn start 
 npm i --force
-
+node -v -- v20.11.1
+npm -v -- 10.5.0
+---
+googleMap
+├─ @googlemaps/js-api-loader@1.16.2
+├─ @react-google-maps/api@2.19.3
+├─ @react-google-maps/infobox@2.19.2
+├─ @react-google-maps/marker-clusterer@2.19.2
+├─ @types/google.maps@3.55.2
+---
 header:
 - setup: -- (img[detail-1]color) (img[detail-2]color) (img[detail-3]color) (login/resgin) (order)
 - api:
@@ -14,3 +38,25 @@ header:
 -- login
 -- resgin
 -- order
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBg_gYIaU6uXcEUgEoZXYGzZXC5YX1qy-A",
+  authDomain: "network-disk-10782.firebaseapp.com",
+  projectId: "network-disk-10782",
+  storageBucket: "network-disk-10782.appspot.com",
+  messagingSenderId: "787429357485",
+  appId: "1:787429357485:web:48893dafa74c62d5f3d324",
+  measurementId: "G-X4TC96LD32"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
