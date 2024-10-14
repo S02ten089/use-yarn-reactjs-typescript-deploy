@@ -1,8 +1,11 @@
+"use client"
 import axios, { AxiosRequestConfig } from 'axios';
 import React, { useEffect } from 'react';
 
 const SearchComponent: React.FC = () => {
   useEffect(() => {
+    let isMounted = true; // Biến để theo dõi trạng thái component
+
     const fetchData = async () => {
       const data = JSON.stringify({
         q: "apple inc",
@@ -23,13 +26,21 @@ const SearchComponent: React.FC = () => {
 
       try {
         const response = await axios(config);
-        console.log(response.data); // Hiển thị kết quả response
+        if (isMounted) {
+          console.log(response.data); // Hiển thị kết quả response nếu component vẫn đang được render
+        }
       } catch (error) {
-        console.error('Error fetching data:', error);
+        if (isMounted) {
+          console.error('Error fetching data:', error);
+        }
       }
     };
 
     fetchData();
+
+    return () => {
+      isMounted = false; // Khi component unmount, set isMounted thành false
+    };
   }, []);
 
   return <div>Check the console for the search result</div>;

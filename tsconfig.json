@@ -8,8 +8,8 @@
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,  
-    "jsx": "react-jsx", // hoặc "react" nếu bạn sử dụng React 17 trở xuống
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "preserve", // hoặc "react" nếu bạn sử dụng React 17 trở xuống
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
@@ -18,9 +18,19 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true
+    "noEmit": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
   "include": [
-    "src"
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

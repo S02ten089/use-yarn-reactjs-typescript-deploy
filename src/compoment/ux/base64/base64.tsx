@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 
 const ImageToBase64: React.FC = () => {

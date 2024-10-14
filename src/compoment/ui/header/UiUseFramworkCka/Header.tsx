@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import styles from './header.module.scss'; // Import SASS module
 import { FaBars } from 'react-icons/fa';

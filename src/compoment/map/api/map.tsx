@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef } from 'react';
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
@@ -51,8 +52,8 @@ const Map: React.FC<MapProps> = ({ apiKey }) => {
     if (mapRef.current) {
       createMarkerCluster(mapRef.current);
     }
-  }, [isLoaded]);
-
+  },              );
+  // }, [isLoaded]);
   if (loadError) {
     return <div>Error loading map: {loadError.message}</div>;
   }
