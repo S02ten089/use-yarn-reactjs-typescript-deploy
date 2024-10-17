@@ -1,5 +1,6 @@
 import React from 'react';
-import styles from './footer.module.scss'; // Import as module
+import Image from 'next/image'; // Import Image from next/image
+import styles from './footer.module.scss'; // Import SCSS module
 
 const Footer: React.FC = () => {
   return (
@@ -8,8 +9,14 @@ const Footer: React.FC = () => {
 
         <div className={styles.footerSection}>
           <a href='/'> 
-            <img src="/path-to-logo/logo.png" alt="Logo" className={styles.footerLogo} />
-          </a> 
+            <Image 
+              src="/path-to-logo/logo.png" 
+              alt="Logo" 
+              width={150}  // Đặt width cho logo
+              height={50}  // Đặt height cho logo
+              className={styles.footerLogo} 
+            />
+          </a>
           {/* <nav className={styles.footerNav}>
             <a href="/">Trang Chủ</a>
             <a href="/about">Giới Thiệu</a>

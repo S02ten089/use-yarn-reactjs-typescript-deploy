@@ -33,7 +33,7 @@ const Base64ToImage: React.FC = () => {
       {imageSrc && (
         <div>
           <h2>Hình ảnh được chuyển đổi:</h2>
-          <img src={imageSrc} alt="Base64" style={{ maxWidth: '100%', height: 'auto' }} />
+          {/* <img src={imageSrc} alt="Base64" style={{ maxWidth: '100%', height: 'auto' }} /> */}
         </div>
       )}
     </div>

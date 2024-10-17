@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import styles from './header.module.scss'; // Import SASS module
 import { FaBars } from 'react-icons/fa';
 // import Image from 'next/image';
-import logo from "../../../../showimg/logo/logofonthome.png"
+// import logo from "../../../../showimg/logo/logofonthome.png"
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}>
-        <img src={logo} alt="Logo" />
+        {/* <img src={logo} alt="Logo" /> */}
         {/* <Image
           src={logo}  // Đường dẫn logo trong thư mục public
           alt="Logo"

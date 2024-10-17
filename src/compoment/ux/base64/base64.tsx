@@ -34,7 +34,7 @@ const ImageToBase64: React.FC = () => {
             readOnly
           />
           <h2>Preview Image:</h2>
-          <img src={base64Image} alt="Uploaded" style={{ maxWidth: '100%' }} />
+          {/* <img src={base64Image} alt="Uploaded" style={{ maxWidth: '100%' }} /> */}
         </div>
       )}
     </div>
