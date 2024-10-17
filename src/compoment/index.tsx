@@ -12,11 +12,17 @@ import MapGoogle from './map';
 import UI from './ui';
 // import fooder
 
+//===//
+import ModeDarkLight from './ux/darkLight';
+//===//
+
 const App: React.FC = () => {
   return (
     <div className="App">
       <UI/>
       <h1>Chat Application</h1>
+      <ModeDarkLight/>
+      <br />
       {/* <Chat /> */}
       <QR/>
       <br />
