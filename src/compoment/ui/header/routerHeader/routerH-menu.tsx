@@ -1,5 +1,9 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { ChakraProvider, Box, Flex, Button, Spinner } from '@chakra-ui/react';
+import { BrowserRouter as Router, Routes, Route
+  // , Link
+ } from 'react-router-dom';
+import { ChakraProvider, Box,
+  //  Flex, Button,
+    Spinner } from '@chakra-ui/react';
 
 // import Home from '../menu/home/Home';
 // import Contact from '../menu/contact/Contact';

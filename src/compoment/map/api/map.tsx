@@ -1,6 +1,8 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, useLoadScript
+  // , Marker 
+} from '@react-google-maps/api';
 import { MarkerClusterer } from '@googlemaps/markerclusterer';
 
 // Định nghĩa các kiểu props nếu cần thiết

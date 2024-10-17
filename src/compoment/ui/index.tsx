@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './header';
+// import Header from './header';
 import UiUseCka from './header/UiUseFramworkCka/App';
 import RouterH from './header/routerHeader/routerH-menu';
 import Footer from './fooder/footer';
