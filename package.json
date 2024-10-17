@@ -70,6 +70,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.15",
+    "eslint-config-react-app": "^7.0.1",
     "sass": "^1.78.0"
   }
 }
