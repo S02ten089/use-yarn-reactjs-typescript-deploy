@@ -12,6 +12,7 @@ yarn add react-icons
 yarn add next react react-dom
 yarn add react-router-dom
 yarn add --dev @next/eslint-plugin-next
+yarn add sharp
 
 
 "use client"
