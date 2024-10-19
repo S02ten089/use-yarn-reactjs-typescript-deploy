@@ -3,6 +3,7 @@ import React from 'react';
 import UiUseCka from './header/UiUseFramworkCka/App';
 import RouterH from './header/routerHeader/routerH-menu';
 import Footer from './fooder/footer';
+import HeroSection from './hero';
 
 const UI: React.FC = () => {
   return (
@@ -10,7 +11,10 @@ const UI: React.FC = () => {
       <div>
         <UiUseCka/>
       </div>
-      <br />
+      {/* <br /> */}
+      <div>
+        <HeroSection/>
+      </div>
       <div className="App">
         {/* <Header />   */}
         <main>
