@@ -6,7 +6,7 @@ const AppContact: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/lienhe" element={<Contact />} />
       </Routes>
     </Router>
   );
