@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // const Home = lazy(() => import('./pages/Home'));
 // const About = lazy(() => import('./pages/About'));
 const Home = lazy(() => import('../../compoment/ui'));
-const About = lazy(() => import('../../compoment/Contact/index'));
+const About = lazy(() => import('../../compoment/Contact/vn/index'));
 
 const App: React.FC = () => (
   <Router>

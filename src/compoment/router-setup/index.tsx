@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
-  const Home = React.lazy(() => import('../ui/header/path/home/Home'));
-  const Contact = React.lazy(() => import('../ui/header/path/contact/Contact'));
-  const Qr = React.lazy(() => import('../ui/header/path/qr/Qr'));
-  const Ux = React.lazy(() => import('../ui/header/path/UX/Ux'));
+  const Home = React.lazy(() => import('../path/home/Home'));
+  const Contact = React.lazy(() => import('../path/contact/eng/Contact'));
+  const Qr = React.lazy(() => import('../path/qr/Qr'));
+  const Ux = React.lazy(() => import('../path/UX/Ux'));
   
   const RouterSetUp: React.FC = () => {
       return (

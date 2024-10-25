@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Box } from '@chakra-ui/react';
-import QR from '../../../../ux/createQR/qr';
+import QR from '../../ux/createQR/qr';
 
 const Qr: React.FC = () => {
   return (

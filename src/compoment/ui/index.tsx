@@ -4,8 +4,8 @@ import UiUseCka from './header/UiUseFramworkCka/App';
 // import RouterH from './header/routerHeader/routerH-menu';
 import Footer from './fooder/footer';
 import HeroSection from './hero';
-import AppContact from '../Contact';
-import RouterSetUp from '../router-setup';
+// import AppContact from '../Contact';
+// import RouterSetUp from '../router-setup';
 
 const UI: React.FC = () => {
   return (
@@ -26,9 +26,9 @@ const UI: React.FC = () => {
             {/* <RouterH/> */}
           </div>
           <div>
-            <p>Liên Hệ Đánh Giá Bình Luận!</p>
+            {/* <p>Liên Hệ Đánh Giá Bình Luận!</p>
             <AppContact/>
-            <RouterSetUp/>
+            <RouterSetUp/> */}
           </div>
         </main>
         <Footer/>
