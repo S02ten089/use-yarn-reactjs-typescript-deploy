@@ -8,8 +8,8 @@ import Footer from '../../ui/fooder/footer';
 const Home: React.FC = () => {
   return (
     <Box>
-      <h1>Trang chủ</h1>
-      <p>Chào mừng bạn đến với trang chủ của chúng tôi.</p>
+      {/* <h1>Trang chủ</h1>
+      <p>Chào mừng bạn đến với trang chủ của chúng tôi.</p> */}
       
       {/* Header */}
       <UiUseCka/>
