@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
 import React, { Suspense } from 'react';
 
@@ -20,6 +20,9 @@ import React, { Suspense } from 'react';
                 <Route path="/contact" element={<Contact />} />
                 <Route path='/qr' element={<Qr/>}/>
                 <Route path='/ux' element={<Ux/>}/>
+                
+                  {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
+                  <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </Suspense>
           </Box>
