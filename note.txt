@@ -13,6 +13,7 @@ yarn add next react react-dom
 yarn add react-router-dom
 yarn add --dev @next/eslint-plugin-next
 yarn add sharp
+yarn add @chakra-ui/icons
 
 
 "use client"
