@@ -8,6 +8,7 @@ import React, { Suspense } from 'react';
   const Qr = React.lazy(() => import('../path/qr/Qr'));
   const Ux = React.lazy(() => import('../path/UX/Ux'));
   const About = React.lazy(() => import('../path/about/About'));
+  const Service = React.lazy(() => import('../path/service/service'));
 
   const RouterSetUp: React.FC = () => {
       return (
@@ -24,7 +25,8 @@ import React, { Suspense } from 'react';
                 <Route path='/qr' element={<Qr/>}/>
                 <Route path='/ux' element={<Ux/>}/>
                 <Route path='/about' element={<About/>}/>
-                
+                <Route path='/services' element={<Service/>}/>
+
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
               </Routes>
