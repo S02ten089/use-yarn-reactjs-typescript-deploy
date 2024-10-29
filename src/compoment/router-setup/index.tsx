@@ -10,6 +10,9 @@ import React, { Suspense } from 'react';
   const About = React.lazy(() => import('../path/about/About'));
   const Service = React.lazy(() => import('../path/service/service'));
 
+
+  const TestHome = React.lazy(() => import('../path/test/home/Home'));
+  
   const RouterSetUp: React.FC = () => {
       return (
         <ChakraProvider>
@@ -27,6 +30,7 @@ import React, { Suspense } from 'react';
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
 
+                <Route path='/test' element={<TestHome/>}/>
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
               </Routes>

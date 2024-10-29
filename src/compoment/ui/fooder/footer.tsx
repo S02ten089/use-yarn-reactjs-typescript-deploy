@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       <div className={styles.footerContainer}>
         
         {/* Logo and Navigation Links */}
-        <div className={`${styles.footerSection} ${styles.testAlign}`}>
+        <div className={`${styles.footerSection} ${styles.testAlign} ${styles.displayNone}`}>
           <a href='/'> 
             <img src={Logo} alt="Logo" className={styles.footerLogo} />
           </a> 
