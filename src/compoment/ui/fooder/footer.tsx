@@ -1,8 +1,11 @@
 import React from 'react';
 import styles from './footer.module.scss'; // Import as SCSS module
 import Logo from '../../../showimg/logo/logofonthome.png';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaHome, FaInfoCircle, FaServicestack, FaPhone } from 'react-icons/fa';
-import { Text } from '@chakra-ui/react';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram
+  // , FaHome, FaInfoCircle, FaServicestack, FaPhone 
+
+} from 'react-icons/fa';
+// import { Text } from '@chakra-ui/react';
 
 const Footer: React.FC = () => {
   return (
@@ -14,12 +17,12 @@ const Footer: React.FC = () => {
           <a href='/'> 
             <img src={Logo} alt="Logo" className={styles.footerLogo} />
           </a> 
-          <nav className={styles.footerNav}>
+          {/* <nav className={styles.footerNav}>
             <a href="/" className={styles.display}><FaHome/><Text> {" "}Trang Chủ</Text></a>
             <a href="/about" className={styles.display}><FaInfoCircle /> Giới Thiệu</a>
             <a href="/services"className={styles.display} ><FaServicestack /> Dịch Vụ</a>
             <a href="/contact" className={styles.display}><FaPhone /> Liên Hệ</a>
-          </nav>
+          </nav> */}
         </div>
 
         {/* Social Media Links */}
@@ -43,7 +46,8 @@ const Footer: React.FC = () => {
 
         {/* Contact Information */}
         <div className={`${styles.footerSection} ${styles.contactInfo}`}>
-          <p>&copy; 2024 Công Ty S02. All rights reserved.</p>
+          <p>&copy; 2024 Công Ty S02.
+            <br/> All rights reserved.</p>
           <p>Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM</p>
           <p>Email: VTT-S02.com</p>
         </div>
