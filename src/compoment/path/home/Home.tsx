@@ -7,7 +7,7 @@ import Footer from '../../ui/fooder/footer';
 
 const Home: React.FC = () => {
   return (
-    <Box>
+    <Box background='#282c34'>
       {/* <h1>Trang chủ</h1>
       <p>Chào mừng bạn đến với trang chủ của chúng tôi.</p> */}
       
