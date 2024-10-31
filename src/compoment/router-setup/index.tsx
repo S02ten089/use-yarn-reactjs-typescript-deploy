@@ -29,6 +29,7 @@ import React, { Suspense } from 'react';
                 <Route path='/ux' element={<Ux/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
+                <Route path='/abc' element={<Home/>}/>
 
                 <Route path='/test' element={<TestHome/>}/>
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}

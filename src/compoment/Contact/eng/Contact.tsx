@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
             type="submit" 
             isLoading={isSubmitting}
           >
-            Gửi bình luận
+            Gửi Tin Nhắn
           </Button>
         </VStack>
       </form>
