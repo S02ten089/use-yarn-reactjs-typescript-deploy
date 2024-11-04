@@ -1,37 +1,36 @@
-// styles/service.module.scss
 .servicePage {
-    background-color: #0b1121;
-    color: white;
-    padding: 2rem;
-  
-    .title {
-      color: #cbd5e0;
-    }
-  
-    .searchSection {
-      display: flex;
-      justify-content: center;
-  
-      .searchInput {
-        width: 70%;
-        max-width: 500px;
-      }
-  
-      .searchButton {
-        background-color: #3182ce;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .title {
+    font-size: 2.5rem;
+    color: #2D3748;
+  }
+
+  .searchSection {
+    display: flex;
+    align-items: center;
+    .searchInput {
+      transition: border 0.3s;
+      &:focus {
+        border-color: #3182ce;
       }
     }
-  
-    .filters {
-      justify-content: center;
-      button {
-        color: #cbd5e0;
-      }
-    }
-  
-    .grid {
-      display: grid;
-      gap: 1.5rem;
+    .searchButton {
+      margin-left: 10px;
     }
   }
-  
+
+  .filters {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+  }
+}

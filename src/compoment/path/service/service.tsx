@@ -1,6 +1,21 @@
 // pages/Service.tsx
-import React from 'react';
-import { Box, Heading, Input, Button, SimpleGrid, Flex, HStack } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import {
+  Box,
+  Heading,
+  Input,
+  Button,
+  SimpleGrid,
+  Flex,
+  HStack,
+  Text,
+  useToast,
+  VStack,
+  Divider,
+  Collapse,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { FaSearch, FaFilter, FaStar, FaCalendarAlt } from 'react-icons/fa';
 import ServiceCard from '../../Service/eng/ServiceCard';
 import styles from './service.module.scss';
 
@@ -15,31 +30,100 @@ const services = [
 ];
 
 const Service: React.FC = () => {
+  const { isOpen, onToggle } = useDisclosure();
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredServices, setFilteredServices] = useState(services);
+  const toast = useToast();
+
+  const handleSearch = () => {
+    const results = services.filter(service => 
+      service.title.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    setFilteredServices(results);
+
+    if (results.length === 0) {
+      toast({
+        title: 'No results found.',
+        description: `No services matched your search: "${searchQuery}"`,
+        status: 'warning',
+        duration: 3000,
+        isClosable: true,
+      });
+    }
+  };
+
+  const handleFilterCategory = () => {
+    const categoryFiltered = services.filter(service => service.title.includes("Accessories"));
+    setFilteredServices(categoryFiltered);
+  };
+
+  const handleResetFilters = () => {
+    setSearchQuery("");
+    setFilteredServices(services);
+  };
+
   return (
-    <Box className={styles.servicePage} p={5}>
-      <Heading as="h1" textAlign="center" className={styles.title}>
+    <Box backgroundColor='black'>
+    <Box className={styles.servicePage} p={5} maxW="1200px" mx="auto" backgroundColor='currentColor'>
+      <Heading as="h1" textAlign="center" className={styles.title} mb={6}>
         Our Services
       </Heading>
-      
-      {/* Search Section */}
-      <Flex alignItems="center" mt={6} mb={8} className={styles.searchSection}>
-        <Input placeholder="Search Services..." size="lg" className={styles.searchInput} />
-        <Button colorScheme="blue" size="lg" ml={2} className={styles.searchButton}>Search</Button>
+      {/* currentColor */}
+      <Flex alignItems="center" mb={6} className={styles.searchSection}>
+        <Input
+          placeholder="Search Services..."
+          size="lg"
+          className={styles.searchInput}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <Button onClick={handleSearch} colorScheme="blue" size="lg" ml={2} className={styles.searchButton}>
+          <FaSearch /> Search
+        </Button>
       </Flex>
 
-      {/* Filters */}
-      <HStack spacing={4} mb={6} className={styles.filters}>
-        <Button variant="outline" colorScheme="blue">Category</Button>
-        <Button variant="outline" colorScheme="blue">Recently Added</Button>
-        <Button variant="outline" colorScheme="blue">Top Rated</Button>
-      </HStack>
+      <VStack align="start" spacing={3} mb={6}>
+        <Button onClick={onToggle} variant="outline" colorScheme="blue" size="sm" leftIcon={<FaFilter />}>
+          Toggle Filters
+        </Button>
+        <Collapse in={isOpen} animateOpacity>
+          <HStack spacing={4} className={styles.filters}>
+            <Button onClick={handleFilterCategory} variant="solid" colorScheme="blue">
+              Category: Accessories
+            </Button>
+            <Button onClick={() => setFilteredServices([...filteredServices].sort((a, b) => a.title.localeCompare(b.title)))} 
+                    variant="outline" 
+                    colorScheme="blue" 
+                    leftIcon={<FaStar />}>
+              Top Rated
+            </Button>
+            <Button onClick={() => setFilteredServices([...filteredServices].sort((a, b) => Date.parse(a.title) - Date.parse(b.title)))} 
+                    variant="outline" 
+                    colorScheme="blue" 
+                    leftIcon={<FaCalendarAlt />}>
+              Recently Added
+            </Button>
+            <Button onClick={handleResetFilters} colorScheme="red" variant="ghost">
+              Reset
+            </Button>
+          </HStack>
+        </Collapse>
+      </VStack>
 
-      {/* Service Cards */}
+      <Divider my={6} />
+
       <SimpleGrid columns={[1, 2, 3]} spacing={6} className={styles.grid}>
-        {services.map((service, index) => (
+        {filteredServices.map((service, index) => (
           <ServiceCard key={index} title={service.title} description={service.description} image={service.image} />
         ))}
       </SimpleGrid>
+
+      {filteredServices.length === 0 && (
+        <Text textAlign="center" mt={10} fontSize="lg" color="gray.500">
+          No services available. Try adjusting your filters.
+        </Text>
+      )}
+    </Box>
     </Box>
   );
 };
