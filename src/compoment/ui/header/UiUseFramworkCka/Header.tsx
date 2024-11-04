@@ -30,6 +30,7 @@ const Header: React.FC = () => {
           <li><a className={styles.aLiHerder} href="/about">Giới Thiệu</a></li>
           <li><a className={styles.aLiHerder} href="/services">Dịch Vụ</a></li>
           <li><a className={styles.aLiHerder} href="/contact">Liên Hệ</a></li>
+          <li><a className={styles.aLiHerder} href="/Donate">Ủng Hộ</a></li>
         </ul>
       </nav>
       <div className={styles.authButtons}>

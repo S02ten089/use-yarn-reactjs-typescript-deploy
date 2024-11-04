@@ -10,6 +10,10 @@ import {
 } from "@chakra-ui/react";
 
 const HeroSection: React.FC = () => {
+  
+  const handleStar = () => {
+    alert("Đang đợi nội dung cập nhật! ")
+  };
   return (
     <Box>
       <Box
@@ -72,7 +76,9 @@ const HeroSection: React.FC = () => {
 
             {/* Call-to-action Buttons */}
             <Stack direction={["column", "row"]} spacing={4}>
-              <Button colorScheme="teal" size="lg" variant="solid">
+              <Button colorScheme="teal" size="lg" variant="solid"
+              onClick={handleStar}
+              >
                 Get Started
               </Button>
               <Button colorScheme="whiteAlpha" size="lg" variant="outline">

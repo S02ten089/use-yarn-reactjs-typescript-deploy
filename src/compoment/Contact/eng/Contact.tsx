@@ -43,15 +43,15 @@ const Contact: React.FC = () => {
 
   return (
     <Box maxW="600px" mx="auto" p={8}>
-      <Heading as="h1" mb={6}>Liên Hệ</Heading>
-      <Text mb={4}>Liên hệ với chúng tôi qua email hoặc số điện thoại, hoặc gửi tin nhắn cho chúng tôi bằng cách điền form dưới đây:</Text>
+      <Heading as="h1" mb={6} color="aliceblue">Liên Hệ</Heading>
+      <Text mb={4} color='#f0f8ff9c'>Liên hệ với chúng tôi qua email hoặc số điện thoại, hoặc gửi tin nhắn cho chúng tôi bằng cách điền form dưới đây:</Text>
       
       {/* Form */}
       <form onSubmit={handleSubmit}>
         <VStack spacing={4}>
           {/* Tên */}
           <FormControl id="name" isRequired>
-            <FormLabel>Tên của bạn</FormLabel>
+            <FormLabel color='#f0f8ff9c'>Tên của bạn</FormLabel>
             <Input 
               type="text" 
               value={name} 
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
 
           {/* Email */}
           <FormControl id="email" isRequired>
-            <FormLabel>Email của bạn</FormLabel>
+            <FormLabel color='#f0f8ff9c'>Email của bạn</FormLabel>
             <Input 
               type="email" 
               value={email} 
@@ -73,8 +73,9 @@ const Contact: React.FC = () => {
 
           {/* Nội dung tin nhắn */}
           <FormControl id="message" isRequired>
-            <FormLabel>Tin nhắn</FormLabel>
+            <FormLabel color='#f0f8ff9c'>Tin nhắn</FormLabel>
             <Textarea 
+            color='#ff4900'
               value={message} 
               onChange={(e) => setMessage(e.target.value)} 
               placeholder="Nhập nội dung tin nhắn" 

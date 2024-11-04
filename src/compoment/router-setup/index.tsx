@@ -9,6 +9,7 @@ import React, { Suspense } from 'react';
   const Ux = React.lazy(() => import('../path/UX/Ux'));
   const About = React.lazy(() => import('../path/about/About'));
   const Service = React.lazy(() => import('../path/service/service'));
+  const Donate = React.lazy(() => import('../path/Donate/Donate'));
 
 
   const TestHome = React.lazy(() => import('../path/test/home/Home'));
@@ -29,7 +30,7 @@ import React, { Suspense } from 'react';
                 <Route path='/ux' element={<Ux/>}/>
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
-                <Route path='/abc' element={<Home/>}/>
+                <Route path='/donate' element={<Donate/>}/>
 
                 <Route path='/test' element={<TestHome/>}/>
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
