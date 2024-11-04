@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { Box } from '@chakra-ui/react';
-import QR from '../../../../ux/createQR/qr';
+import AboutIntroduce from '../../ui/header/introduce';
 
 const Qr: React.FC = () => {
   return (
     <Box>
 
-        <QR/>
+      <AboutIntroduce/>
 
     </Box>
   );

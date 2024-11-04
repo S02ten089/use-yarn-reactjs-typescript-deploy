@@ -1,12 +1,13 @@
-// pages/Contact.tsx
+// pages/Home.tsx
 import React from 'react';
 import { Box } from '@chakra-ui/react';
+import AppContactEng from '../../../Contact/eng';
 
 const Contact: React.FC = () => {
   return (
     <Box>
-      <h1>Liên Hệ</h1>
-      <p>Liên hệ với chúng tôi qua email hoặc số điện thoại.</p>
+      {/* contact english */}
+      <AppContactEng/>
     </Box>
   );
 };

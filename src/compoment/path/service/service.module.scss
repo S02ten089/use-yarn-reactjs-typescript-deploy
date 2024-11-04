@@ -1,0 +1,37 @@
+// styles/service.module.scss
+.servicePage {
+    background-color: #0b1121;
+    color: white;
+    padding: 2rem;
+  
+    .title {
+      color: #cbd5e0;
+    }
+  
+    .searchSection {
+      display: flex;
+      justify-content: center;
+  
+      .searchInput {
+        width: 70%;
+        max-width: 500px;
+      }
+  
+      .searchButton {
+        background-color: #3182ce;
+      }
+    }
+  
+    .filters {
+      justify-content: center;
+      button {
+        color: #cbd5e0;
+      }
+    }
+  
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+  }
+  

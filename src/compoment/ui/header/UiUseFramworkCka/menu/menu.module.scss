@@ -1,0 +1,6 @@
+.transition{
+    transition: background-color 1.3s ease;
+    &:hover {
+        background-color: aqua;
+      }
+}
