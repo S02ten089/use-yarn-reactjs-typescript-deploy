@@ -5,6 +5,8 @@ import MobileMenuToggle from './menu';
 import LogoComponent from '../../../logo';
 import { spinAnimation } from '../../../ux/animation/overthink';
 import { Box } from '@chakra-ui/react';
+import ModalDangNhap from '../../../auth/ui/cka/login';
+import ModalDangKy from '../../../auth/ui/cka/register';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -31,8 +33,13 @@ const Header: React.FC = () => {
         </ul>
       </nav>
       <div className={styles.authButtons}>
-        <button className={styles.loginBtn}>Đăng Nhập</button>
-        <button className={styles.signupBtn}>Đăng Ký</button>
+        <button className={styles.loginBtn}>
+          <ModalDangNhap />
+        </button>
+        <button className={styles.signupBtn}>
+          <ModalDangKy/>
+          {/* Đăng Ký */}
+        </button>
       </div>
       <MobileMenuToggle toggleMenu={toggleMenu} />
     </header>
