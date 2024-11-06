@@ -63,8 +63,17 @@ const Service: React.FC = () => {
   };
 
   return (
-    <Box backgroundColor='black'>
-    <Box className={styles.servicePage} p={5} maxW="1200px" mx="auto" backgroundColor='currentColor'>
+    <Box backgroundColor='black'
+    bgGradient={[
+      'linear-gradient(to bottom, #a2d0fa, #000000, #000000, #000000, #0d071a, #000000)'
+      // 'linear(to-tr, teal.300, yellow.400)',
+      // 'linear(to-t, blue.200, teal.500)',
+      // 'linear(to-b, orange.100, purple.300)',
+    ]}
+    >
+    <Box className={styles.servicePage} p={5} maxW="1200px" mx="auto" backgroundColor='currentColor'
+    borderRadius='59px'
+    >
       <Heading as="h1" textAlign="center" className={styles.title} mb={6}>
         Our Services
       </Heading>
@@ -76,9 +85,10 @@ const Service: React.FC = () => {
           className={styles.searchInput}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          color='#63b3ed'
         />
         <Button onClick={handleSearch} colorScheme="blue" size="lg" ml={2} className={styles.searchButton}>
-          <FaSearch /> Search
+          <FaSearch /> {" "} Search
         </Button>
       </Flex>
 

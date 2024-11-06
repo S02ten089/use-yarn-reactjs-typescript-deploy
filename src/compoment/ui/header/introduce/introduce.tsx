@@ -12,7 +12,7 @@ const IntroducePage: React.FC = () => {
         <Heading as="h1" className={styles.logo}>Img Avatar Tien</Heading>
         <HStack className={styles.navLinks}>
           <Link href="#">WORK</Link>
-          <Link href="#">ABOUT ME</Link>
+          <Link href="/about">ABOUT ME</Link>
           <Link href="/lienhe">CONTACT</Link>
         </HStack>
       </HStack>

@@ -15,7 +15,9 @@ const HeroSection: React.FC = () => {
     alert("Đang đợi nội dung cập nhật! ")
   };
   return (
-    <Box>
+    <Box
+    // p={5}
+    >
       <Box
         as="section"
         height="100vh"
