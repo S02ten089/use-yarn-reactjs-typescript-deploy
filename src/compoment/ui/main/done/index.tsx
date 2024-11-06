@@ -3,6 +3,7 @@ import styles from './done.module.scss';
 import { Box, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton } from '@chakra-ui/react';
 // import QRCode from 'qrcode.react'; // Thêm thư viện để tạo QR Code
 import QR from '../../../../showimg/img/qr.png'
+import QrCodeApi from './QrCodeApi';
 
 const DonePage: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,6 +78,7 @@ const DonePage: React.FC = () => {
               Tạm sử dụng hình ảnh qr - update(call api ví dụ: /qr)
             </h1>
             <img src={QR}></img>
+            <QrCodeApi/>
             {/* <QRCode value="https://example.com/support" size={256} /> */}
             <p className={styles.qrText}>Quét mã QR này để ủng hộ cho chúng tôi!</p>
           </ModalBody>
