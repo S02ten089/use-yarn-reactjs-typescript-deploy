@@ -5,8 +5,7 @@ import MobileMenuToggle from './menu';
 import LogoComponent from '../../../logo';
 import { spinAnimation } from '../../../ux/animation/overthink';
 import { Box } from '@chakra-ui/react';
-import ModalDangNhap from '../../../auth/ui/cka/login';
-import ModalDangKy from '../../../auth/ui/cka/register';
+import BoxLG from './boxLogin';
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,15 +32,7 @@ const Header: React.FC = () => {
           <li><a className={styles.aLiHerder} href="/Donate">Ủng Hộ</a></li>
         </ul>
       </nav>
-      <div className={styles.authButtons}>
-        <button className={styles.loginBtn}>
-          <ModalDangNhap />
-        </button>
-        <button className={styles.signupBtn}>
-          <ModalDangKy/>
-          {/* Đăng Ký */}
-        </button>
-      </div>
+      <BoxLG/>
       <MobileMenuToggle toggleMenu={toggleMenu} />
     </header>
   );
