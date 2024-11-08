@@ -32,7 +32,7 @@ const Header: React.FC = () => {
           <li><a className={styles.aLiHerder} href="/Donate">Ủng Hộ</a></li>
         </ul>
       </nav>
-      <BoxLG/>
+      <BoxLG toggleMenu={toggleMenu}/>
       <MobileMenuToggle toggleMenu={toggleMenu} />
     </header>
   );

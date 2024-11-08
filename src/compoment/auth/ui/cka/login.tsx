@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {
+import { 
   Box,
   Button,
   FormControl,
@@ -17,7 +17,11 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 
-const ModalDangNhap: React.FC = () => {
+interface ModalDangNhapProps {
+  onLoginSuccess: (username: string) => void;
+}
+
+const ModalDangNhap: React.FC<ModalDangNhapProps> = ({ onLoginSuccess }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -43,15 +47,19 @@ const ModalDangNhap: React.FC = () => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
-        // Modify the GET request to include email and password as query parameters
         const response = await axios.get("https://6728bc566d5fa4901b6ab54b.mockapi.io/Login", {
           params: {
             account: email,
             password: password,
           },
         });
-        console.log("Đăng nhập thành công!", response.data);
-        onClose();
+        const username = response.data[0]?.account; // lấy tên người dùng từ response
+        if (username) {
+          onLoginSuccess(username??' checkApi email or account'); // gọi hàm onLoginSuccess khi đăng nhập thành công
+          onClose();
+        } else {
+          setApiError("Đăng nhập không thành công. Vui lòng thử lại.");
+        }
       } catch (error) {
         setApiError("Đăng nhập không thành công. Vui lòng thử lại.");
       }
