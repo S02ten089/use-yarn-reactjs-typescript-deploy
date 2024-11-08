@@ -25,7 +25,7 @@ const TestHome: React.FC = () => {
       {/* Service Cards */}
       <SimpleGrid columns={[1, 2, 3]} spacing={6} mt={8}>
         {/* Map through services to render each card */}
-        <ServiceCard title="Web Design" description="Professional web design services." image="/images/web-design.jpg" />
+        <ServiceCard title="Web Design" description="Professional web design services." image="/images/web-design.jpg" link='' />
         {/* Additional ServiceCard components here */}
       </SimpleGrid>
 

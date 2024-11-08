@@ -20,13 +20,13 @@ import ServiceCard from '../../Service/eng/ServiceCard';
 import styles from './service.module.scss';
 
 const services = [
-  { title: 'Web Design', description: 'Professional web design services.', image: '/images/web-design.jpg' },
-  { title: 'Server Rental', description: 'Affordable server rentals.', image: '/images/server-rental.jpg' },
-  { title: 'Maintenance', description: 'Maintenance for servers, web, and software.', image: '/images/maintenance.jpg' },
-  { title: 'Computer Accessories', description: 'Sales and setup of computer accessories.', image: '/images/computer-accessories.jpg' },
-  { title: 'Football Apparel', description: 'Wide range of football apparel.', image: '/images/football-apparel.jpg' },
-  { title: 'Fashion Accessories', description: 'Trendy fashion accessories.', image: '/images/fashion-accessories.jpg' },
-  { title: 'Beauty & Spa Products', description: 'Exclusive beauty and spa products.', image: '/images/beauty-spa.jpg' },
+  { title: 'Web Design', description: 'Professional web design services.', image: '/images/web-design.jpg', link:'http://shopify.vtt-s02.com' },
+  { title: 'Server Rental', description: 'Affordable server rentals.', image: '/images/server-rental.jpg', link:'' },
+  { title: 'Maintenance', description: 'Maintenance for servers, web, and software.', image: '/images/maintenance.jpg' ,link:''},
+  { title: 'Computer Accessories', description: 'Sales and setup of computer accessories.', image: '/images/computer-accessories.jpg',link:'' },
+  { title: 'Football Apparel', description: 'Wide range of football apparel.', image: '/images/football-apparel.jpg', link:'' },
+  { title: 'Fashion Accessories', description: 'Trendy fashion accessories.', image: '/images/fashion-accessories.jpg', link:'' },
+  { title: 'Beauty & Spa Products', description: 'Exclusive beauty and spa products.', image: '/images/beauty-spa.jpg', link:'' },
 ];
 
 const Service: React.FC = () => {
@@ -125,7 +125,7 @@ const Service: React.FC = () => {
 
       <SimpleGrid columns={[1, 2, 3]} spacing={6} className={styles.grid}>
         {filteredServices.map((service, index) => (
-          <ServiceCard key={index} title={service.title} description={service.description} image={service.image} />
+          <ServiceCard key={index} title={service.title} description={service.description} image={service.image} link={`${service.link} ${''}`} />
         ))}
       </SimpleGrid>
 
