@@ -11,6 +11,8 @@ import axios from 'axios';
   const About = React.lazy(() => import('../path/about/About'));
   const Service = React.lazy(() => import('../path/service/index'));
   const Donate = React.lazy(() => import('../path/Donate/Donate'));
+  const ServiceCard = React.lazy(() => import('../Service/Sample/index'))
+
   const TestLogin = React.lazy(() => import('../path/test/home/homeLogin'));
 
   const TestHome = React.lazy(() => import('../path/test/home/Home'));
@@ -49,6 +51,7 @@ import axios from 'axios';
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
                 <Route path='/donate' element={<Donate/>}/>
+                <Route path='/services/card' element={<ServiceCard/>}/>
 
                 <Route path='/test' element={<TestHome/>}/>
                 <Route path='/testLogin' element={<TestLogin/>}/>
