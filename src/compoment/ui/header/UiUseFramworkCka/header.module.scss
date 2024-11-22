@@ -6,7 +6,9 @@ $hover-color: #d4b0fd;
 
 // Breakpoints cho responsive
 $breakpoint-mobile: 768px;
-
+$breakpoint-mobilePabook: 600px;
+$breakpoint-mobile14promax: 430px;
+$breakpoint-mobileMini: 340px;
 // Styles cho Header
 .header {
   display: flex;
@@ -103,8 +105,20 @@ $breakpoint-mobile: 768px;
   // Hiển thị mobile menu
   @media (max-width: $breakpoint-mobile) {
     flex-direction: column;
-    align-items: flex-start;
+    // align-items: flex-start;
 
+    .aLiHerder{
+      // font-size: 100%;
+    }
+    .loginCssMobile{
+      // display: flex;
+    }
+    .logo{
+      position: absolute;
+      z-index: 6;
+      top: 25px;
+      left: 30px;
+    }
     .navMenu {
       display: none; // Ẩn menu trên mobile
     }
@@ -130,7 +144,9 @@ $breakpoint-mobile: 768px;
     .navMenu {
       display: flex;
       flex-direction: column;
-      position: absolute;
+      // position: absolute;
+      position: static;
+      align-items: center;
       top: 60px;
       left: 0;
       width: 100%;
@@ -140,22 +156,35 @@ $breakpoint-mobile: 768px;
       gap: 15px;
       z-index: 5;
 
+      ul{
+        text-align: center;
+      }
       li {
         a {
-          font-size: 20px;
+          font-size: clamp(1rem, 2.5vw, 2rem);
+          // font-size: 20px;
         }
       }
     }
 
     .authButtons {
       display: flex;
-      flex-direction: column;
+      // flex-direction: column;
       gap: 10px;
-
+      margin-top: 8px;
       button {
         width: 100%;
         padding: 12px;
       }
     }
   }
+}
+
+@media (max-width: $breakpoint-mobilePabook) {
+  .logo{
+    display: none;
+  }
+}
+@media (max-width: $breakpoint-mobileMini) {
+ 
 }

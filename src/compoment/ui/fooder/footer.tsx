@@ -26,7 +26,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Social Media Links */}
-        <div className={`${styles.footerSection} ${styles.testAlign}`}>
+        <div className={`${styles.footerSection} ${styles.testAlign} ${styles.cssMobile}`}>
           <h4>Kết nối với chúng tôi</h4>
           <div className={styles.socialLinks}>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">

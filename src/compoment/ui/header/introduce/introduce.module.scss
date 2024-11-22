@@ -111,3 +111,16 @@
     }
   }
 }
+@media (max-width: 880px) {
+  .navbar{
+    display: none;
+  }
+  .imageContainer{
+    display: none;
+  }
+}
+@media (max-width: 430px) {
+  .name{
+    white-space: pre;
+  }
+}
