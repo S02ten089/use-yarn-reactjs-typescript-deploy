@@ -16,6 +16,16 @@ yarn add sharp
 yarn add @chakra-ui/icons
 yarn add react-icons
 
+ Ẩn mã nguồn trong DevTools bằng sourceMap
+Cấu hình sourceMap để mã nguồn không hiển thị trong DevTools:
+
+Trong package.json, chỉnh sửa lệnh build:
+json
+
+"scripts": {
+  "build": "react-scripts build && GENERATE_SOURCEMAP=false"
+}
+
 "use client"
 setup 
 run project yarn start 

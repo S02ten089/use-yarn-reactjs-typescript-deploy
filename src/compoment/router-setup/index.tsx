@@ -14,7 +14,7 @@ import axios from 'axios';
   const ServiceCard = React.lazy(() => import('../Service/Sample/index'))
 
   const TestLogin = React.lazy(() => import('../path/test/home/homeLogin'));
-
+  const ProductList = React.lazy(() => import('../path/test/paths/ProductList'));
   const TestHome = React.lazy(() => import('../path/test/home/Home'));
   
   const RouterSetUp: React.FC = () => {
@@ -55,6 +55,7 @@ import axios from 'axios';
 
                 <Route path='/test' element={<TestHome/>}/>
                 <Route path='/testLogin' element={<TestLogin/>}/>
+                <Route path='/products' element={<ProductList/>}/>
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
               </Routes>
