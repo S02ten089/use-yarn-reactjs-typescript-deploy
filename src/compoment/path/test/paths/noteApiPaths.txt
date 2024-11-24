@@ -1,0 +1,9 @@
+{
+  "items": [
+    { "id": 1, "title": "Product 1", "price": 100, "image": "/path/to/image" },
+    { "id": 2, "title": "Product 2", "price": 200, "image": "/path/to/image" }
+  ],
+  "total": 50, 
+  "page": 1,
+  "limit": 10
+}
