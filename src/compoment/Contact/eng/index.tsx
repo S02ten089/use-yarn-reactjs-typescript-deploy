@@ -3,6 +3,7 @@ import Contact from './Contact';
 import { Box } from '@chakra-ui/react';
 import UiUseCka from '../../ui/header/UiUseFramworkCka/App';
 import Footer from '../../ui/fooder/footer';
+import styles from './contact.module.scss';
 
 const AppContactEng: React.FC = () => {
   return (
@@ -14,7 +15,9 @@ const AppContactEng: React.FC = () => {
       // 'linear(to-tr, teal.300, yellow.400)',
       // 'linear(to-t, blue.200, teal.500)',
       // 'linear(to-b, orange.100, purple.300)',
-    ]}>
+    ]}
+    className={styles.cssColorMobile} 
+    >
       {/* linear-gradient(to bottom, #a2d0fa, #000000, #000000, #000000, #0d071a, #000000) */}
       <UiUseCka/>
       <Contact/>

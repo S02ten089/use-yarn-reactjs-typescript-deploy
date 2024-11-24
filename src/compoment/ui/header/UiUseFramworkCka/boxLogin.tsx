@@ -42,7 +42,7 @@ const BoxLG: React.FC<MobileMenuToggleProps> = ({ toggleMenu }) => {
           {/* <Icon as={MdOutlineAccountCircle} mr={2} /> */}
           {/* <Heading size="md" mr={4}>Chào mừng, {loggedInUser}!</Heading> */}
           <Menu>
-            <MenuButton as={Button} onClick={toggleMenu} variant="outline" size="sm">
+            <MenuButton className={styles.loginCssMobile} as={Button} onClick={toggleMenu} variant="outline" size="sm">
             <Icon as={MdOutlineAccountCircle}  />
             </MenuButton>
             <MenuList>

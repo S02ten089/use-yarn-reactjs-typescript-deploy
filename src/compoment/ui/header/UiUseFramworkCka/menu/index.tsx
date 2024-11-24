@@ -76,7 +76,7 @@ const MobileMenuToggle: React.FC<MobileMenuToggleProps> = ({ toggleMenu }) => {
 
   return (
     <Menu>
-      <MenuButton as={Button} onClick={toggleMenu} variant="outline" size="sm">
+      <MenuButton className={styles.menuButtonMobile} as={Button} onClick={toggleMenu} variant="outline" size="sm">
         <FaBars />
       </MenuButton>
       <MenuList bg='none'>

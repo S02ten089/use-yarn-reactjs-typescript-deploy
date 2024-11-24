@@ -8,7 +8,7 @@ import {
   Flex,
   VStack,
 } from "@chakra-ui/react";
-
+import styles from './hero.module.scss';
 const HeroSection: React.FC = () => {
   
   const handleStar = () => {
@@ -67,7 +67,9 @@ const HeroSection: React.FC = () => {
             zIndex={2}
           >
             {/* Hero Heading */}
-            <Heading as="h1" size="3xl" fontWeight="bold" lineHeight="shorter">
+            <Heading as="h1" size="3xl" fontWeight="bold" lineHeight="shorter"
+            className={styles.cssMobilehero}
+            >
               Welcome to Our Digital World
             </Heading>
 
@@ -104,6 +106,7 @@ const HeroSection: React.FC = () => {
             alt="Hero Image"
             borderRadius="full"
             border="4px solid white"
+            className={styles.imgShow}
           />
         </Box>
       </Box>
