@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+  .imgShow {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .cssMobilehero {
+    font-size: revert;
+  }
+}/*# sourceMappingURL=hero.module.css.map */
