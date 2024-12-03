@@ -1,0 +1,10 @@
+.transition {
+  transition: background-color 1.3s ease;
+}
+.transition:hover {
+  background-color: aqua;
+}
+
+.menuButtonMobile {
+  top: 8px;
+}/*# sourceMappingURL=menu.module.css.map */
