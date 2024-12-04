@@ -11,6 +11,10 @@
     .info_trung{
         display: flex;
         gap: 10px;
+        flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+        justify-content: center; /* Căn giữa các phần tử dọc */
+        align-items: center; /* Căn giữa các phần tử ngang */
+        height: 100vh; /* Chiều cao của container chiếm toàn bộ chiều cao của viewport */
         h3{
             font-size: 25px;
         }

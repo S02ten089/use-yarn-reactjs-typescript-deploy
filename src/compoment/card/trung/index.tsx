@@ -1,5 +1,5 @@
 import React from 'react';
-import './trung.scss';
+import './trung.css';
 
 
 function Trung() {
