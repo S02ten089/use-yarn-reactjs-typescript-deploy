@@ -11,19 +11,24 @@ import axios from 'axios';
   const About = React.lazy(() => import('../path/about/About'));
   const Service = React.lazy(() => import('../path/service/index'));
   const Donate = React.lazy(() => import('../path/Donate/Donate'));
-  const ServiceCard = React.lazy(() => import('../Service/Sample/index'))
+  const Admin = React.lazy(() => import('../path/admin/Admin'));
+
+  const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
+  const AboutCard = React.lazy(() => import('../path/card/about/index'));
 
   const TestLogin = React.lazy(() => import('../path/test/home/homeLogin'));
   const ProductList = React.lazy(() => import('../path/test/paths/ProductList'));
   const TestHome = React.lazy(() => import('../path/test/home/Home'));
+ 
   
   const RouterSetUp: React.FC = () => {
+    
     const [numberApi, setNumberApi] = useState<number | null>(null);
     useEffect(() => {
       const fetchNumber = async () => {
         try {
-          const response = await axios.get('https://672964536d5fa4901b6cff4d.mockapi.io/pading/1'); //khong lien ket
-          const fetchedNumber = response.data.number;
+          const response = await axios.get('https://672964536d5fa4901b6cff4d.mockapi.io/pading/3'); //khong lien ket
+          const fetchedNumber = response.data.id;
           setNumberApi(fetchedNumber);
         } catch (error) {
           console.error('Error fetching number:', error);
@@ -51,7 +56,10 @@ import axios from 'axios';
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
                 <Route path='/donate' element={<Donate/>}/>
+                <Route path='/admin' element={<Admin/>}/>
+
                 <Route path='/services/card' element={<ServiceCard/>}/>
+                <Route path='/about/card' element={<AboutCard/>}/>
 
                 <Route path='/test' element={<TestHome/>}/>
                 <Route path='/testLogin' element={<TestLogin/>}/>
