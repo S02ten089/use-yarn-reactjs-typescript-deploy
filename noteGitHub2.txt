@@ -1,7 +1,0 @@
- demo git
-...
-1. cách đẩy code lên ko ảnh hưởng json code chính
--- git commit 
--- git pull <nhánh_chính>
--- git push <nhánh_riêng>
---- merge  

@@ -7,5 +7,3 @@
   "page": 1,
   "limit": 10
 }
-dohungkhoi984@gmail.com
-https://67499108868020296631a51f.mockapi.io/product/1/items

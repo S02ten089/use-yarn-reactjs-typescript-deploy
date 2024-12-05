@@ -1,4 +1,4 @@
-import { keyframes } from "@emotion/react";
+import { keyframes } from "@chakra-ui/react";
 
 // Định nghĩa keyframes cho animation
 const spin = keyframes`
