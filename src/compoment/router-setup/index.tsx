@@ -60,6 +60,7 @@ import axios from 'axios';
                 <Route path='/trung' element={<Trung/>}/>
 
                 <Route path='/services/card' element={<ServiceCard/>}/>
+                <Route path='/about/card' element={<AboutCard/>}/>
 
                 <Route path='/test' element={<TestHome/>}/>
                 <Route path='/testLogin' element={<TestLogin/>}/>
