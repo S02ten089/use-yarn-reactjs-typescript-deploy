@@ -3,6 +3,7 @@ import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
 import React, { Suspense, useEffect, useState } from 'react';
 import axios from 'axios';
 
+
   const Home = React.lazy(() => import('../path/home/Home'));
   const Contact = React.lazy(() => import('../path/contact/eng/Contact'));
   const Lienhe = React.lazy(() => import('../path/contact/vn/Contact'));
@@ -11,7 +12,11 @@ import axios from 'axios';
   const About = React.lazy(() => import('../path/about/About'));
   const Service = React.lazy(() => import('../path/service/index'));
   const Donate = React.lazy(() => import('../path/Donate/Donate'));
-  const ServiceCard = React.lazy(() => import('../Service/Sample/index'))
+  const Admin = React.lazy(() => import('../path/admin/Admin'));
+  const Trung = React.lazy(()=> import('../card/trung/index'));
+
+  const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
+  const AboutCard = React.lazy(() => import('../path/card/about/index'));
 
   const TestLogin = React.lazy(() => import('../path/test/home/homeLogin'));
   const ProductList = React.lazy(() => import('../path/test/paths/ProductList'));
@@ -51,6 +56,9 @@ import axios from 'axios';
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
                 <Route path='/donate' element={<Donate/>}/>
+                <Route path='/admin' element={<Admin/>}/>
+                <Route path='/trung' element={<Trung/>}/>
+
                 <Route path='/services/card' element={<ServiceCard/>}/>
 
                 <Route path='/test' element={<TestHome/>}/>
