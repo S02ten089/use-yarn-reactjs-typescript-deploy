@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './trung.module.scss'; // Sử dụng SCSS Modules
 import avt_img from './img/avt_trung.jpg';
-import { Box, Heading, Image, Text, Divider, Link, VStack, HStack, Button } from '@chakra-ui/react';
+import { Box, Heading, Image, Text, Divider, VStack, HStack, Button } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 function Trung() {
     return (
@@ -51,6 +52,12 @@ function Trung() {
                 Show Info All
             </Button>
             </a>
+            
+            <Link to="/addinfoall" className='AddInfo'>
+                <Button color="blue.400" fontWeight="bold" className={styles.Addinfo}>
+                    Add Info All
+                </Button>
+            </Link>
         </Box>
     );
 }
