@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './trung.module.scss'; // Sử dụng SCSS Modules
 import avt_img from './img/avt_trung.jpg';
-import { Box, Heading, Image, Text, Divider, Link, VStack, HStack, Button } from '@chakra-ui/react';
+import { Box, Heading, Image, Text, Divider, VStack, HStack, Button } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 function Trung() {
     return (
@@ -44,13 +45,52 @@ function Trung() {
             {/* Thanh nối dưới cùng */}
             <div className="line-bottom"></div>
             <Divider orientation="horizontal" my={6} className={styles.lineBottom} />
-
+            <Box
+            textAlign="center"
+            p={4}
+            boxShadow="lg"
+            borderRadius="lg"
+            bg="gray.100"
+            >
             {/* Nút Show Info All */}
-            <a href="#" className="show-info">
-            <Button color="blue.400" fontWeight="bold" className={styles.showInfo}>
+                <Button
+                as="a"
+                href="#"
+                fontWeight="bold"
+                colorScheme="blue"
+                sx={{
+                margin: "0.5rem",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                    transform: "scale(1.05)",
+                    backgroundColor: "#2b6cb0",
+                    color: "#fff",
+                },
+                }}
+            >
                 Show Info All
             </Button>
-            </a>
+
+        {/* Nút Add Info All */}
+        <Link to="/addinfoall">
+            <Button
+            fontWeight="bold"
+            colorScheme="blue"
+            variant="outline"
+            sx={{
+                margin: "0.5rem",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                transform: "scale(1.05)",
+                backgroundColor: "#3182ce",
+                color: "#fff",
+                },
+            }}
+            >
+            Add Info All
+            </Button>
+        </Link>
+        </Box>
         </Box>
     );
 }
