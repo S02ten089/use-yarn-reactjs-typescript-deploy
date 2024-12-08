@@ -58,7 +58,7 @@ import axios from 'axios';
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
                 <Route path='/donate' element={<Donate/>}/>
-                <Route path='/admin' element={<Admin/>}/>
+                <Route path='/admin/*' element={<Admin/>}/>
                 <Route path='/trung' element={<Trung/>}/>
                 <Route path='/addinfoall' element={<AddInfo/>}/>
 
