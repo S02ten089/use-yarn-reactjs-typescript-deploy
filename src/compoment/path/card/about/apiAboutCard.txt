@@ -1,0 +1,54 @@
+
+
+-- 
+interface CardData {
+  id: number;
+  name: string;
+  title: string;
+  description: string;
+  email: string;
+  phone: string;
+  address: string;
+  socials: SocialLinks;
+  profileImage: string;
+  css: Css;
+}
+-
+interface Css {
+  bgColor: string;
+  colorText: string;
+  bgBox: string;
+  bgAll: string;
+  animationCard: string;
+}
+-
+interface SocialLinks {
+  linkedin?: string;
+  github?: string;
+  twitter?: string;
+}
+
+---
+demo
+id: 1,
+    name: "John Doe",
+    title: "Full Stack Developer",
+    description: "A passionate developer with expertise in React and Node.js.",
+    email: "john.doe@example.com",
+    phone: "+123456789",
+    address: "123 Main St, Anytown, USA",
+    socials: {
+      linkedin: "https://linkedin.com/in/johndoe",
+      github: "https://github.com/johndoe",
+      twitter: "https://twitter.com/johndoe",
+    },
+    profileImage: "https://via.placeholder.com/150",
+    css: {
+      bgColor: "#ffffff",
+      colorText: "#333333",
+      bgBox: "rgba(0, 0, 0, 0.10)",
+      bgAll: "#e0e0e0",
+      animationCard: "scale(1.05)",
+    },
+---
+
