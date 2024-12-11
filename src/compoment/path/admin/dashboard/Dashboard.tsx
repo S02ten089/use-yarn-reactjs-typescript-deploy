@@ -74,6 +74,17 @@ const Dashboard: React.FC = () => {
             Quản lý bài viết
           </Button>
         </Link>
+        <Link to="/admin/manage-TX">
+          <Button
+            colorScheme="teal"
+            variant="solid"
+            leftIcon={<FaClipboardList />}
+            width="100%"
+            maxW="300px"
+          >
+            Tai Xua
+          </Button>
+        </Link>
       </VStack>
     </Box>
   );

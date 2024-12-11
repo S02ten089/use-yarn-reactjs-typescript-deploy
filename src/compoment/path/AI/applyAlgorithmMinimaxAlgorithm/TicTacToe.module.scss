@@ -1,0 +1,56 @@
+.ticTacToe {
+    text-align: center;
+    color: white;
+    background: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    margin: 20px 0;
+  }
+  
+  .cell {
+    width: 100px;
+    height: 100px;
+    background: #444;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+    &.X {
+      color: #ff4d4d;
+    }
+  
+    &.O {
+      color: #4d94ff;
+    }
+  }
+  
+  .gameOver .cell {
+    pointer-events: none;
+  }
+  
+  .winner {
+    font-size: 1.5rem;
+    margin: 20px 0;
+  }
+  
+  .button {
+    background: #61dafb;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
