@@ -1,22 +1,13 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './trung.module.scss'; // Sử dụng SCSS Modules
 import avt_img from './img/avt_trung.jpg';
 import { Box, Heading, Image, Text, Divider, VStack, HStack, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-
-interface cardInfo{
-    id: number;
-    name: string;
-    birthday: Date;
-    skill_programer: string[];
-    email: string; // Email riêng biệt
-    phone: string; // Số điện thoại riêng biệt
-    contach: string; // Chuỗi chứa thông tin liên hệ (email và phone kết hợp)
-}
+import { cardInfo } from './cardInfo';
 
 const Trung: React.FC = () => {
     const [card, setCard] = useState<cardInfo | null>(null);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
     const fetchData = async () => {
         try {
@@ -43,17 +34,40 @@ const Trung: React.FC = () => {
             const mockData: cardInfo = {
                 id: 12345,
                 name: "Nguyễn Văn A",
-                birthday: new Date("1990-01-01"),
-                skill_programer: ["JavaScript", "TypeScript", "Python"],
+                birthday: "1",
+                birthdayThang: "1",
+                birthdayNam: "2024",
+                skillProgramer: {
+                    skill1:"JavaScript",
+                    skill2:"Typescript",
+                    skill3:"Python",
+                    skill:"Chưa Thêm",
+                },
                 email: "nguyenvana@example.com", // Email riêng biệt
-                phone: "+84123456789", // Số điện thoại riêng biệt
-                contach: "Email: nguyenvana@example.com, Phone: +84123456789" // Chuỗi chứa thông tin liên hệ
+                phone: {
+                    ese:"84",
+                    phoneNumber:'123456789',
+                },
+                contach: 
+                {
+                    header:"Giới Thiệu Bản Thân",
+                    main:"Lĩnh Vực AI",
+                    footer:{
+                        linkedin:"",
+                        github:"",
+                        twitter:""
+                    }
+                },
             };
             // Gán dữ liệu giả vào state
             setCard(mockData);
         }
     };
     
+    useEffect(() => {
+        fetchData();
+
+      });
 
     return (
         <Box className={styles.Trung} textAlign="center" p={4} boxShadow="lg" borderRadius="lg">
@@ -72,17 +86,38 @@ const Trung: React.FC = () => {
                     alt="Phung Hai Trung's Avatar"
                     className={styles.img}
                 />
-
-                <div className="timeline-line">
+<div className="info_trung">
+                {/* <div className="timeline-line">
                     <h1>
                         {card?.name}
                     </h1>
-                </div>
+                </div> */}
 
-                <div className="info_trung">
-                    <Text>Birthday: {card?.birthday?.toDateString()} </Text>
-                    <Text>PRGM: {card?.skill_programer} </Text>
-                    <Text>Contact: {card?.contach} </Text>
+                
+                    <Text>Birthday: Ngày {card?.birthday} Tháng {card?.birthdayThang} Năm {card?.birthdayNam} </Text>
+                    <Text>PRGM: 
+                        
+                        - {card?.skillProgramer.skill1} {' '}
+                        - {card?.skillProgramer.skill2} {' '}
+                        - {card?.skillProgramer.skill3} {' '}
+                        - {card?.skillProgramer.skill} </Text>
+                    <Text>Địa Chỉ LH:<br/>
+                    - Email: {card?.email}<br/>
+                    - Phone: +{card?.phone.ese}
+                    {/* {' '} */}
+                    {card?.phone.phoneNumber}
+                    
+                    </Text>
+                    <Text>
+                        Contact:{' '} 
+                        {card?.contach.header}<br/>
+                        {card?.contach.main}<br/>
+                    </Text>
+                    <Text>
+                        {card?.contach.footer.github}<br/>
+                        {card?.contach.footer.linkedin}<br/>
+                        {card?.contach.footer.twitter} 
+                    </Text>
                 </div>
             </HStack>
 
