@@ -11,6 +11,7 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import styles from "./AddInfoAll.module.scss";
+import { Link } from 'react-router-dom'; 
 
 const AddInfoAll: React.FC = () => {
   const [title, setTitle] = useState("Sample Title");
@@ -140,6 +141,13 @@ const AddInfoAll: React.FC = () => {
           <Button className={styles.submitButton} colorScheme="teal" type="submit">
             Lưu thông tin đã nhập
           </Button>
+          <Button 
+            as={Link} 
+            to="/trung" 
+            className={styles.submitButton} 
+            colorScheme="teal">
+          Về card chính
+        </Button>
         </VStack>
       </form>
     </Box>

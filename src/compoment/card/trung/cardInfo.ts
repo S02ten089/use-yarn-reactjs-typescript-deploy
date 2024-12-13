@@ -10,9 +10,9 @@ export interface cardInfo {
     birthdayNam:string;
 }
 export interface skillProgrameR{
-    skill1:"JavaScript";
-    skill2:"Typescript";
-    skill3:"Python";
+    skill1:string;
+    skill2:string;
+    skill3:string;
     skill:string;
 }
 export interface contach{

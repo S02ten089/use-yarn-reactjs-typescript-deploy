@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import styles from './trung.module.scss'; // Sử dụng SCSS Modules
 import avt_img from './img/avt_trung.jpg';
-import { Box, Heading, Image, Text, Divider, VStack, HStack, Button } from '@chakra-ui/react';
+import { Box, Heading, Image, Text, Divider, VStack, HStack, Button, styled } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { cardInfo } from './cardInfo';
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"; 
 
 const Trung: React.FC = () => {
     const [card, setCard] = useState<cardInfo | null>(null);
@@ -33,28 +34,28 @@ const Trung: React.FC = () => {
             // Dữ liệu giả (mock data) khi gặp lỗi hoặc timeout
             const mockData: cardInfo = {
                 id: 12345,
-                name: "Nguyễn Văn A",
-                birthday: "1",
-                birthdayThang: "1",
-                birthdayNam: "2024",
+                name: "Phùng Hải Trung",
+                birthday: "29",
+                birthdayThang: "03",
+                birthdayNam: "2002",
                 skillProgramer: {
                     skill1:"JavaScript",
-                    skill2:"Typescript",
+                    skill2:"Vue JS",
                     skill3:"Python",
-                    skill:"Chưa Thêm",
+                    skill:"",
                 },
-                email: "nguyenvana@example.com", // Email riêng biệt
+                email: "trung1234@gmail.com", // Email riêng biệt
                 phone: {
                     ese:"84",
-                    phoneNumber:'123456789',
+                    phoneNumber:'9221456',
                 },
                 contach: 
                 {
                     header:"Giới Thiệu Bản Thân",
-                    main:"Lĩnh Vực AI",
+                    main:"Hiểu biết tốt về lập trình AI. Muốn tạo dự án bot AI có kèm API AI chuyên dụng",
                     footer:{
-                        linkedin:"",
-                        github:"",
+                        linkedin:"https://www.linkedin.com/in/troy-phung-72006b315/",
+                        github:"https://github.com/trung-dev-del",
                         twitter:""
                     }
                 },
@@ -66,16 +67,23 @@ const Trung: React.FC = () => {
     
     useEffect(() => {
         fetchData();
-
       });
-
+    
     return (
-        <Box className={styles.Trung} textAlign="center" p={4} boxShadow="lg" borderRadius="lg">
+        <Box className={styles.Trung} p={4} boxShadow="lg" borderRadius="lg">
             <VStack spacing={2} mb={6}>
-                <Heading as="h1" size="lg" color="teal.500">
-                    <div className="header">
-                        <h1>{card?.name}</h1>
-                        <div className="line-top"></div>
+
+                <Heading as="h1">
+                    <div className={styles.header}>
+                        <h1 >Hello, I'm: 
+                            <span>  </span>
+                            <span>{card?.name}</span>
+                            </h1>
+                    </div>
+                    <div className={styles.linkInfo}>
+                        <Link to="/work">Work</Link> 
+                        <Link to="/about-for-me">About for Me</Link> 
+                        <Link to="/contact">Contact</Link>
                     </div>
                 </Heading>
             </VStack>
@@ -86,81 +94,106 @@ const Trung: React.FC = () => {
                     alt="Phung Hai Trung's Avatar"
                     className={styles.img}
                 />
-<div className="info_trung">
-                {/* <div className="timeline-line">
-                    <h1>
-                        {card?.name}
-                    </h1>
-                </div> */}
-
-                
-                    <Text>Birthday: Ngày {card?.birthday} Tháng {card?.birthdayThang} Năm {card?.birthdayNam} </Text>
-                    <Text>PRGM: 
+                <div className={styles.infoTrung}>
+                    <h2> Devlopver fontend & AI</h2>
+                    <Text as="p" className={styles.text}>Birthday: Ngày {card?.birthday} Tháng {card?.birthdayThang} Năm {card?.birthdayNam} </Text>
+                    <Text as="p" className={styles.text}>PRGM: 
                         
                         - {card?.skillProgramer.skill1} {' '}
                         - {card?.skillProgramer.skill2} {' '}
                         - {card?.skillProgramer.skill3} {' '}
                         - {card?.skillProgramer.skill} </Text>
-                    <Text>Địa Chỉ LH:<br/>
+                    <Text as="p" className={styles.text}> Địa Chỉ LH: <br/>
                     - Email: {card?.email}<br/>
                     - Phone: +{card?.phone.ese}
-                    {/* {' '} */}
+                    {' '} 
                     {card?.phone.phoneNumber}
                     
                     </Text>
-                    <Text>
+                    <Text as="p" className={`${styles.textContact} ${styles.text}`}>
                         Contact:{' '} 
                         {card?.contach.header}<br/>
                         {card?.contach.main}<br/>
                     </Text>
-                    <Text>
-                        {card?.contach.footer.github}<br/>
-                        {card?.contach.footer.linkedin}<br/>
-                        {card?.contach.footer.twitter} 
+                    <br /><br />
+                    <Text as="p" className={styles.textIcon}>
+                        <a href={card?.contach.footer.github} target="_blank" rel="noopener noreferrer">
+                            <FaGithub size={30} />
+                        </a>
+                        <a href={card?.contach.footer.linkedin} target="_blank" rel="noopener noreferrer">
+                            <FaLinkedin size={30} />
+                        </a>
+                        <a href={card?.contach.footer.twitter} target="_blank" rel="noopener noreferrer">
+                            <FaTwitter size={30} />
+                        </a> 
                     </Text>
-                </div>
-            </HStack>
-
-            <div className="line-bottom"></div>
-            <Divider orientation="horizontal" my={6} className={styles.lineBottom} />
-            <Box textAlign="center" p={4} boxShadow="lg" borderRadius="lg" bg="gray.100">
+                <br />
+                
                 <Button
                     as="a"
                     href="#"
                     fontWeight="bold"
-                    colorScheme="blue"
                     sx={{
                         margin: "0.5rem",
                         transition: "all 0.3s ease",
+                        backgroundColor:"#663399",
+                        color:"#fff",
                         "&:hover": {
                             transform: "scale(1.05)",
-                            backgroundColor: "#2b6cb0",
+                            backgroundColor: "#663399",
                             color: "#fff",
                         },
                     }}
                 >
                     Show Info All
                 </Button>
+                </div>
+            </HStack>
 
-                <Link to="/addinfoall">
-                    <Button
-                        fontWeight="bold"
-                        colorScheme="blue"
-                        variant="outline"
-                        sx={{
-                            margin: "0.5rem",
-                            transition: "all 0.3s ease",
-                            "&:hover": {
-                                transform: "scale(1.05)",
-                                backgroundColor: "#3182ce",
-                                color: "#fff",
-                            },
-                        }}
-                    >
-                        Add Info All
-                    </Button>
-                </Link>
-            </Box>
+            <div className={styles.footer}>
+                <Divider orientation="horizontal" my={6} className={styles.lineBottom} />
+                <Box textAlign="center" p={4} boxShadow="lg" borderRadius="lg" bg="gray.100">
+                    <Link to="/addinfoall">
+                        <Button
+                            fontWeight="bold"
+                            variant="outline"
+                            sx={{
+                                margin: "0.5rem",
+                                transition: "all 0.3s ease",
+                                backgroundColor:"#fff",
+                                color:"#663399",
+                                "&:hover": {
+                                    transform: "scale(1.05)",
+                                    backgroundColor: "#663399",
+                                    color: "#fff",
+                                },
+                            }}
+                        >
+                            Add Info All
+                        </Button>
+                    </Link>
+
+                    <Link to="/">
+                        <Button
+                            fontWeight="bold"
+                            variant="outline"
+                            sx={{
+                                margin: "0.5rem",
+                                transition: "all 0.3s ease",
+                                backgroundColor:"#fff",
+                                color:"#663399",
+                                "&:hover": {
+                                    transform: "scale(1.05)",
+                                    backgroundColor: "#ccc",
+                                    color: "#663399",
+                                },
+                            }}
+                        >
+                            To the Home page
+                        </Button>
+                    </Link>
+                </Box>
+            </div>
         </Box>
     );
 }
