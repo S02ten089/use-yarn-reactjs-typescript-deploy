@@ -1,0 +1,13 @@
+.aboutList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  
+    .aboutCardWrapper {
+      flex: 1 1 calc(33.33% - 20px); // Hiển thị 3 thẻ trên 1 dòng
+      max-width: 300px;
+    }
+  }
+  

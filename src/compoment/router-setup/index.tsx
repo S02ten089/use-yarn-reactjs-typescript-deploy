@@ -3,6 +3,7 @@ import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
 import React, { Suspense, useEffect, useState } from 'react';
 import axios from 'axios';
 
+
   const Home = React.lazy(() => import('../path/home/Home'));
   const Contact = React.lazy(() => import('../path/contact/eng/Contact'));
   const Lienhe = React.lazy(() => import('../path/contact/vn/Contact'));
@@ -11,11 +12,15 @@ import axios from 'axios';
   const About = React.lazy(() => import('../path/about/About'));
   const Service = React.lazy(() => import('../path/service/index'));
   const Donate = React.lazy(() => import('../path/Donate/Donate'));
-  const ServiceCard = React.lazy(() => import('../Service/Sample/index'))
+  const Admin = React.lazy(() => import('../path/admin/Admin'));
+  const AI = React.lazy(()=> import('../path/AI/index'));
+  const RouterCardTrung = React.lazy(()=> import('../card/trung/router/routerCardTrung'));
+  
 
-  const TestLogin = React.lazy(() => import('../path/test/home/homeLogin'));
-  const ProductList = React.lazy(() => import('../path/test/paths/ProductList'));
-  const TestHome = React.lazy(() => import('../path/test/home/Home'));
+  const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
+  const Card = React.lazy(() => import('../path/card/routerCard'));
+
+  const Test = React.lazy(() => import('../path/test/routerTest'));
   
   const RouterSetUp: React.FC = () => {
     const [numberApi, setNumberApi] = useState<number | null>(null);
@@ -51,11 +56,15 @@ import axios from 'axios';
                 <Route path='/about' element={<About/>}/>
                 <Route path='/services' element={<Service/>}/>
                 <Route path='/donate' element={<Donate/>}/>
+                <Route path='/AI' element={<AI/>}/>
+                
+                <Route path='/admin/*' element={<Admin/>}/>
+                <Route path='/*' element={<RouterCardTrung/>}/>
+                <Route path='/card/*' element={<Card/>}/>
+                <Route path='/*' element={<Test/>}/>
+
                 <Route path='/services/card' element={<ServiceCard/>}/>
 
-                <Route path='/test' element={<TestHome/>}/>
-                <Route path='/testLogin' element={<TestLogin/>}/>
-                <Route path='/products' element={<ProductList/>}/>
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
               </Routes>
