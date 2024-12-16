@@ -4,6 +4,7 @@ import { Box } from '@chakra-ui/react';
 import UiUseCka from '../../ui/header/UiUseFramworkCka/App';
 import HeroSection from '../../ui/hero';
 import Footer from '../../ui/fooder/footer';
+import AI from '../AI/BotAi/botAi';
 
 const Home: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Home: React.FC = () => {
       <HeroSection/>
       {/* Ux - Ui - Main */}
       
-      
+      {/* <AI/> */}
       {/* Footer */}
       <Footer/>
     </Box>
