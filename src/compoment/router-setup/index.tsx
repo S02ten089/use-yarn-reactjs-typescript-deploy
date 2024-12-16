@@ -16,6 +16,7 @@ import axios from 'axios';
   const Trung = React.lazy(()=> import('../card/trung/index'));
   const AddInfo = React.lazy(()=> import('../card/trung/addAllInfo'));
   const AI = React.lazy(()=> import('../path/AI/index'));
+  const RouterCardTrung = React.lazy(()=> import('../card/trung/router/routerCardTrung'));
   
 
   const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
@@ -62,6 +63,7 @@ import axios from 'axios';
                 <Route path='/admin/*' element={<Admin/>}/>
                 <Route path='/trung' element={<Trung/>}/>
                 <Route path='/addinfoall' element={<AddInfo/>}/>
+                <Route path='/*' element={<RouterCardTrung/>}/>
                 <Route path='/AI' element={<AI/>}/>
 
                 <Route path='/services/card' element={<ServiceCard/>}/>

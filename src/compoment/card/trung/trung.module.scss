@@ -1,101 +1,179 @@
 .Trung {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 65%; // Giới hạn chiều rộng
-    margin: 0 auto; // Căn giữa
-    padding: 20px 0; // Khoảng cách trên dưới
-    background-color: #8adcf5;   //để màu dễ nhìn để css
-    border-radius: 10px;
+    align-items: center; /* Căn nội dung về bên trái */
+    width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+    justify-content: flex-start; /* Căn ngang các thẻ con về bên trái */
+    margin: 0; /* Loại bỏ căn giữa */
+    padding: 5px; /* Giữ khoảng cách đều */
+    background-color: #fff; /* Màu nền */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
     .header {
-        text-align: center;
-        margin-bottom: 40px; // Khoảng cách từ tiêu đề tới phần main
-
+        text-align: left; /* Căn trái */
+        margin-bottom: 40px;
+    
         h1 {
-            font-size: 2rem;
+            font-size: 2.0rem;
             font-weight: bold;
-            color: #333;
+    
+            span {
+                color: #CC0033;
+            }
         }
+        
+        @media (max-width:768px) {
+            margin-top: 11%;
+            margin-bottom: -3%;
+        }
+        h1{
+            font-size: 25px;
+        }
+        @media (max-width:400px) {
+            margin: 0;
+        }
+    }
+    
+    .linkInfo {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex; /* Hiển thị dạng hàng ngang */
+        justify-content: flex-end;
 
-        .line-top {
-            width: 60px;
-            height: 3px;
-            background-color: #333;
-            margin: 10px auto;
-            border-radius: 10px;
+        a {
+            font-size: 18px; /* Chữ nhỏ hơn */
+            text-decoration: none; /* Bỏ gạch chân */
+            color: #000; /* Màu chữ */
+            margin-right: 20px; /* Khoảng cách ngang giữa các liên kết */
+            text-transform: uppercase; /* Chuyển chữ thường thành chữ hoa (nếu cần) */
+
+            &:last-child {
+                margin-right: 0; /* Bỏ khoảng cách sau phần tử cuối */
+            }
+
+            &:hover {
+                color: 	#FF9900; /* Màu chữ khi hover */
+                text-decoration: underline; /* Gạch chân khi hover */
+            }
+        }
+        @media (max-width:768px) {
+            right: unset;
+            a{
+                margin-right: 10px;
+            }
+        }
+        @media (max-width:400px) {
+            display: none;
         }
     }
 
     .main {
         display: flex;
-        flex-direction: row; /* Chuyển sang chiều ngang */
-        align-items: center;
-        justify-content: center; /* Căn giữa các phần tử */
-        gap: 30px; /* Khoảng cách giữa các khối */
+        flex-direction: row;
+        gap: 15px;
         position: relative;
+        margin-left: -10%;
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
 
-        .img,
-        .info_trung {
+        .infoTrung {
             background-color: white;
             border-radius: 10px;
-            padding: 20px;
-            width: 55%; /* Điều chỉnh chiều rộng */
+            padding: 8px;
+            width: 60%;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: relative;
+            h2 {
+                font-size: 1.5rem;
+                color: #CC0033;
+                font-weight: bold;
+            }
+            @media (max-width:768px) {
+                width: 100%;
+            }
         }
 
         .img {
-            width: 320px;
-            height: 320px; /* Giới hạn chiều cao để ảnh có tỷ lệ đồng nhất */
-            padding: 8px !important;
-            border-radius: 2px !important;
-            overflow: hidden; /* Đảm bảo ảnh không bị tràn ra ngoài khối */
-            border: none;
-            
-            img {
-                width: 100%; /* Đảm bảo ảnh luôn chiếm toàn bộ chiều rộng của khối */
-                height: 100%; /* Đảm bảo ảnh chiếm toàn bộ chiều cao của khối */
-                object-fit: cover; /* Ảnh sẽ lấp đầy khối mà không bị méo */
-            }
-        }
+            width: 250px;
+            height: 300px;
+            padding: unset !important;
+            border-radius: 5% !important;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            object-fit: cover;
 
-        .info_trung {
-            p {
-                margin: 5px 0;
-                font-size: 1rem;
-                color: #555;
+            @media (max-width: 768px) {
+                width: 200px;
+                height: 200px;
+                border-radius: 1px;
+            }
+
+            @media (max-width:400px) {
+                display: none;
             }
         }
     }
 
-    .line-bottom {
-        width: 120px;
-        height: 3px;
-        background-color: palegoldenrod;
-        margin: 20px auto;
-        border-radius: 10px;
-    }
-
-    .show-info {
-        display: inline-block; /* Để thẻ hiển thị như một nút */
+    .showInfo {
+        display: inline-block;
         width: 320px;
         height: 45px;
         background-color: slateblue;
-        color: white; /* Chữ màu trắng */
-        font-size: 20px; /* Kích thước chữ */
-        font-weight: bold; /* Chữ in đậm */
-        text-transform: uppercase; /* Chữ hoa */
-        text-align: center; /* Căn giữa chữ */
-        line-height: 45px; /* Căn giữa theo chiều dọc */
-        border-radius: 5px; /* Bo góc */
-        text-decoration: none; /* Loại bỏ gạch chân của thẻ a */
-        transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền khi hover */
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 45px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
 
         &:hover {
-            background-color: #3a58a2; /* Màu nền khi hover */
+            background-color: #3a58a2;
         }
+    }  
+}
+
+.text {
+    text-align: left; /* Căn trái cho text */
+    color: #4F4F4F;
+    font-size: 16px;
+}
+.textIcon{
+    display: flex;
+    justify-content:center; // Hoặc sử dụng space-between nếu muốn cách đều các icon
+    align-items: flex-start;
+    margin-left: -5%;
+    gap: 25px; // Khoảng cách giữa các icon
+  
+    a {
+      color: inherit; // Giữ màu theo theme hoặc thay đổi theo nhu cầu
+      text-decoration: none;
+  
+      &:hover {
+        color: #663399; // Màu khi hover
+      }
     }
+    @media (max-width:768px) {
+        margin-left: unset;
+        justify-content: space-between;
+    }
+}
+.textContact {
+    text-align: justify;
+    width: 80%;
+    margin: 0; /* Loại bỏ căn giữa */
+    color: #4F4F4F;
+}
+
+.footer {
+    width: 100%;
 }
