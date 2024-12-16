@@ -1,10 +1,11 @@
 .Trung {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Căn nội dung về bên trái */
+    align-items: center; /* Căn nội dung về bên trái */
     width: 100%; /* Đảm bảo chiếm toàn bộ chiều rộng */
+    justify-content: flex-start; /* Căn ngang các thẻ con về bên trái */
     margin: 0; /* Loại bỏ căn giữa */
-    padding: 20px; /* Giữ khoảng cách đều */
+    padding: 5px; /* Giữ khoảng cách đều */
     background-color: #fff; /* Màu nền */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -75,9 +76,9 @@
     .main {
         display: flex;
         flex-direction: row;
-        gap: 30px;
+        gap: 15px;
         position: relative;
-
+        margin-left: -10%;
         @media (max-width: 768px) {
             flex-direction: column;
         }
@@ -85,8 +86,8 @@
         .infoTrung {
             background-color: white;
             border-radius: 10px;
-            padding: 20px;
-            width: 55%;
+            padding: 8px;
+            width: 60%;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             h2 {
@@ -100,8 +101,8 @@
         }
 
         .img {
-            width: 400px;
-            height: auto;
+            width: 250px;
+            height: 300px;
             padding: unset !important;
             border-radius: 5% !important;
             overflow: hidden;
@@ -138,7 +139,7 @@
         &:hover {
             background-color: #3a58a2;
         }
-    }
+    }  
 }
 
 .text {
@@ -150,7 +151,7 @@
     display: flex;
     justify-content:center; // Hoặc sử dụng space-between nếu muốn cách đều các icon
     align-items: flex-start;
-    margin-left: -58%;
+    margin-left: -5%;
     gap: 25px; // Khoảng cách giữa các icon
   
     a {

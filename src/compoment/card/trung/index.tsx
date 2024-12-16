@@ -72,7 +72,6 @@ const Trung: React.FC = () => {
     return (
         <Box className={styles.Trung} p={4} boxShadow="lg" borderRadius="lg">
             <VStack spacing={2} mb={6}>
-
                 <Heading as="h1">
                     <div className={styles.header}>
                         <h1 >Hello, I'm: 
@@ -128,25 +127,24 @@ const Trung: React.FC = () => {
                         </a> 
                     </Text>
                 <br />
-                
-                <Button
-                    as="a"
-                    href="#"
-                    fontWeight="bold"
-                    sx={{
-                        margin: "0.5rem",
-                        transition: "all 0.3s ease",
-                        backgroundColor:"#663399",
-                        color:"#fff",
-                        "&:hover": {
-                            transform: "scale(1.05)",
-                            backgroundColor: "#663399",
-                            color: "#fff",
-                        },
-                    }}
-                >
-                    Show Info All
-                </Button>
+                <Link to="/trungallinfo">
+                    <Button
+                        fontWeight="bold"
+                        sx={{
+                            margin: "0.5rem",
+                            transition: "all 0.3s ease",
+                            backgroundColor:"#663399",
+                            color:"#fff",
+                            "&:hover": {
+                                transform: "scale(1.05)",
+                                backgroundColor: "#663399",
+                                color: "#fff",
+                            },
+                        }}
+                    >
+                        Show Info All
+                    </Button>
+                </Link>
                 </div>
             </HStack>
 
