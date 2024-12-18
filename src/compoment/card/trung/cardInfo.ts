@@ -52,6 +52,7 @@ export interface mockApi {
     cssColorButton:string;
     cssBg:string;
     cssImgBg:string;
+    linkInfo:string;
 }
 export interface link {
     link1:string

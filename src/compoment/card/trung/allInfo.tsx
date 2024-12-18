@@ -22,7 +22,7 @@ const AllInfo: React.FC = () => {
 
   // Mock data dùng khi gặp lỗi hoặc timeout
   const mockData: mockApi = {
-    id: 12345,
+    id: 1,
     name: "Phùng Hải Trung",
     avatar: avt_img,
     linkname: "",
@@ -64,15 +64,16 @@ const AllInfo: React.FC = () => {
       linkiconbutton: "",
     },
     //css
-    cssAvatar: "",
-    cssInfo: "",
-    cssContent: "",
-    cssButton: "",
-    cssBgButton: "",
-    cssButtonClick: "",
-    cssColorButton: "",
-    cssBg: "",
-    cssImgBg: "",
+      cssAvatar: "100%", //border-radius
+      cssInfo: "32px", //cỡ chữ linkInfo
+      cssContent: "24px",
+      cssButton: "35px; ",
+      cssBgButton: "3%",
+      cssButtonClick: "",
+      cssColorButton: "#3333CC",
+      cssBg: "",
+      cssImgBg: "",
+      linkInfo:"trung.Info",
     //
   };
 
@@ -85,10 +86,18 @@ const AllInfo: React.FC = () => {
   }, []);
 
   return (
+    <Link
+      to={`/${card?.linkInfo}`}
+      // className={styles.}
+      // style={{ backgroundColor:  }}
+    >
     <Box className={styles.rightContainer}>
-      <img src={avt_img} alt="Phung Hai Trung avt" className={styles.avtMini} />
-      <Text>@{card?.info}</Text>
-      <Text>{card?.content}</Text>
+      <img src={avt_img} alt="Phung Hai Trung avt" 
+      className={styles.miniAVT}
+      style={{borderRadius: card?.cssAvatar}}
+      />
+      <Text style={{fontSize: card?.cssInfo}}>@{card?.info}</Text>
+      <Text style={{fontSize: card?.cssContent}}>{card?.content}</Text>
       <Box className={styles.infoFull}>
         {card?.nameIcon && card.link && (
           <>
@@ -117,7 +126,10 @@ const AllInfo: React.FC = () => {
       </Box>
 
       {/* Các nút dưới footer */}
-      <div className={styles.footer}>
+      <div className={styles.footer}
+       style={{color: card?.cssColorButton,
+              marginTop: card?.cssBgButton
+        }}>
         {card?.linkiconbutton && (
           <>
             <Link to={card.linkiconbutton.linkiconbutton1}>
@@ -136,6 +148,7 @@ const AllInfo: React.FC = () => {
         )}
       </div>
     </Box>
+    </Link>
   );
 }
 export default AllInfo;
