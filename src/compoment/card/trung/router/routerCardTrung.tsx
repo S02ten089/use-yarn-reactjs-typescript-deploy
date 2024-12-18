@@ -5,6 +5,8 @@ import { Spinner, Box } from '@chakra-ui/react';
   const CardAbout = React.lazy(() => import('../allInfo'));
   const Trung = React.lazy(()=> import('../index'));
   const AddInfo = React.lazy(()=> import('../addAllInfo'));
+  const Dashboard = React.lazy(()=> import('../dashboard/index'));
+  const ManagerCardInfo = React.lazy(()=> import('../dashboard/managerAllinfo'));
 //   const CardAbout = React.lazy(() => import('./allInfo'));
 
   const RouterCard: React.FC = () => {
@@ -14,10 +16,11 @@ import { Spinner, Box } from '@chakra-ui/react';
               <Routes>
 
                 <Route path='/trungallinfo' element={<CardAbout/>}/>
-                <Route path='/trung' element={<Trung/>}/>
+                <Route path='/' element={<Trung/>}/>
                 <Route path='/addinfoall' element={<AddInfo/>}/>
-                {/* <Route path="/:link" element={<CardAbout />} /> */}
-                
+                <Route path="/:link" element={<CardAbout />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/managertrung" element={<ManagerCardInfo />} />
               </Routes>
             </Suspense>
           </Box>

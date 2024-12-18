@@ -67,7 +67,7 @@ const AboutCard: React.FC = () => {
   return (
     <Link
       // to={`/about/card/${card.link}`}
-      to={`/${card.link}`}
+      to={`/card/${card.link}`}
       className={styles.aboutCardWrapper}
       style={{ backgroundColor: card.css.bgAll }}
     >
