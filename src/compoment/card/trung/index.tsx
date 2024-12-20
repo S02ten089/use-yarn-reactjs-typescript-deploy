@@ -127,7 +127,7 @@ const Trung: React.FC = () => {
                         </a> 
                     </Text>
                 <br />
-                <Link to="/trungallinfo">
+                <Link to="/trung/trungallinfo">
                     <Button
                         fontWeight="bold"
                         sx={{

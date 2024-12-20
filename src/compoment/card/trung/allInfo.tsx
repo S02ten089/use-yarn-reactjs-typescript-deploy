@@ -67,11 +67,11 @@ const AllInfo: React.FC = () => {
       cssAvatar: "100%", //border-radius
       cssInfo: "32px", //cỡ chữ linkInfo
       cssContent: "24px",
-      cssButton: "35px; ",
+      cssButton: "50px",
       cssBgButton: "3%",
-      cssButtonClick: "",
+      cssButtonClick:"",//không hỗ trợ khai báo hover trực tiếp cần qua css
       cssColorButton: "#3333CC",
-      cssBg: "",
+      cssBg: "lavender",
       cssImgBg: "",
       linkInfo:"trung.Info",
     //
@@ -91,7 +91,8 @@ const AllInfo: React.FC = () => {
       // className={styles.}
       // style={{ backgroundColor:  }}
     >
-    <Box className={styles.rightContainer}>
+    <Box className={styles.rightContainer} style={{background:card?.cssImgBg,
+                                                    backgroundColor:card?.cssBg}}>
       <img src={avt_img} alt="Phung Hai Trung avt" 
       className={styles.miniAVT}
       style={{borderRadius: card?.cssAvatar}}
@@ -126,22 +127,33 @@ const AllInfo: React.FC = () => {
       </Box>
 
       {/* Các nút dưới footer */}
-      <div className={styles.footer}
-       style={{color: card?.cssColorButton,
-              marginTop: card?.cssBgButton
-        }}>
+      <div className={styles.footer}>
         {card?.linkiconbutton && (
           <>
-            <Link to={card.linkiconbutton.linkiconbutton1}>
+            <Link to={card.linkiconbutton.linkiconbutton1}  style={{
+                width:card.cssButton,
+                height: card.cssButton,
+                color:card.cssColorButton
+              }}>
               <FaDiscord className={styles.icon} />
             </Link>
-            <Link to={card.linkiconbutton.linkiconbutton2}>
-              <FaLinkedin className={styles.icon} />
+            <Link to={card.linkiconbutton.linkiconbutton2} style={{
+                width:card.cssButton,
+                height: card.cssButton,
+                color:card.cssColorButton
+              }}>
+              <FaLinkedin className={styles.icon}  />
             </Link>
-            <Link to={card.linkiconbutton.linkiconbutton3}>
+            <Link to={card.linkiconbutton.linkiconbutton3} style={{
+                width:card.cssButton,
+                height: card.cssButton, color:card.cssColorButton
+              }}>
               <PiThreadsLogoBold className={styles.icon} />
             </Link>
-            <Link to={card.linkiconbutton.linkiconbutton4}>
+            <Link to={card.linkiconbutton.linkiconbutton4} style={{
+                width:card.cssButton,
+                height: card.cssButton, color:card.cssColorButton
+              }}>
               <FaEnvelope className={styles.icon} />
             </Link>
           </>
