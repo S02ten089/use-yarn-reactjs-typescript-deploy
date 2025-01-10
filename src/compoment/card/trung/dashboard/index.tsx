@@ -14,57 +14,61 @@ import {
 } from "@chakra-ui/react";
 import { FaUsers, FaClipboardList } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import WrapperWithBorder from "./WrapperWithBorder";
+import { useCountUp } from "./useCountUp";
+import './dashboard.scss'; 
+
 
 const Dashboard: React.FC = () => {
+  const users = useCountUp({ start: 0, end: 1234, duration: 1500, updateInterval: 50 });
+  const posts = useCountUp({ start: 0, end: 567, duration: 1500, updateInterval: 50 });
+  const activities = useCountUp({ start: 0, end: 89, duration: 1500, updateInterval: 50 });
+  
   return (
-    <Box
-      p={6}
-      bgGradient="linear(to-br, gray.800, gray.900)"
-      color="white"
-      minH="100vh"
-    >
-      <Heading mb={6} textAlign="center">
-        Dashboard
-      </Heading>
-      <Text mb={10} fontSize="lg" textAlign="center">
-        Chào mừng bạn đến với trang Dashboard. Quản lý người dùng, bài viết và
-        nhiều tính năng khác tại đây.
-      </Text>
+    <WrapperWithBorder>
+      <div className="box">
+        <Heading className="heading" mb={6} textAlign="center">
+          Dashboard
+        </Heading>
+        <Text className="text" mb={10} fontSize="lg" textAlign="center">
+          Chào mừng bạn đến với trang Dashboard. Quản lý người dùng, bài viết và nhiều tính năng khác tại đây.
+        </Text>
 
-      {/* Stats Section */}
-      <SimpleGrid columns={[1, 2, 3]} spacing={6} mb={10}>
-        <Stat bg="gray.700" p={4} borderRadius="md" boxShadow="lg">
-          <StatLabel fontSize="lg">Người dùng</StatLabel>
-          <StatNumber fontSize="3xl">1,234</StatNumber>
-          <Icon as={FaUsers} w={8} h={8} color="teal.400" mt={2} />
-        </Stat>
-        <Stat bg="gray.700" p={4} borderRadius="md" boxShadow="lg">
-          <StatLabel fontSize="lg">Bài viết</StatLabel>
-          <StatNumber fontSize="3xl">567</StatNumber>
-          <Icon as={FaClipboardList} w={8} h={8} color="teal.400" mt={2} />
-        </Stat>
-        <Stat bg="gray.700" p={4} borderRadius="md" boxShadow="lg">
-          <StatLabel fontSize="lg">Hoạt động</StatLabel>
-          <StatNumber fontSize="3xl">89</StatNumber>
-          <Icon as={FaClipboardList} w={8} h={8} color="teal.400" mt={2} />
-        </Stat>
-      </SimpleGrid>
+        {/* Stats Section */}
+        <SimpleGrid className="simple-grid" columns={[1, 2, 3]} spacing={6} mb={10}>
+          <Stat className="stat">
+            <div>
+              <StatLabel className="stat-label">Người dùng</StatLabel>
+              <StatNumber className="stat-number">{users}</StatNumber>
+            </div>
+            <Icon className="icon" as={FaUsers} />
+          </Stat>
+          <Stat className="stat">
+            <div>
+              <StatLabel className="stat-label">Bài viết</StatLabel>
+              <StatNumber className="stat-number">{posts}</StatNumber>
+            </div>
+            <Icon className="icon" as={FaClipboardList} />
+          </Stat>
+          <Stat className="stat">
+            <div>
+              <StatLabel className="stat-label">Hoạt động</StatLabel>
+              <StatNumber className="stat-number">{activities}</StatNumber>
+            </div>
+            <Icon className="icon" as={FaClipboardList} />
+          </Stat>
+        </SimpleGrid>
 
-      {/* Quick Actions */}
-      <VStack spacing={6}>
-        <Link to="/trung/managertrung">
-          <Button
-            colorScheme="teal"
-            variant="solid"
-            leftIcon={<FaClipboardList />}
-            width="100%"
-            maxW="300px"
-          >
-            Quản lý bài viết
-          </Button>
-        </Link>
-      </VStack>
-    </Box>
+        {/* Quick Actions */}
+        <VStack className="vstack" spacing={6}>
+          <Link to="/trung/managertrung">
+            <Button className="button" leftIcon={<FaClipboardList />}>
+              Quản lý bài viết
+            </Button>
+          </Link>
+        </VStack>
+      </div>
+    </WrapperWithBorder>
   );
 };
 

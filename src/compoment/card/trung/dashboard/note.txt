@@ -1,0 +1,24 @@
+1. mục tiêu:
+1.1 tạo dashboard:
+2. tạo dashboard:
+2.1. chuẩn bị 
+2.1.1. bảng sơ đồ
+2.1.2. dữ liệu API
+2.1.3. thiết kế dashboard
+2.1.4. 
+2.2. bảng sơ đồ:
+- header
+-- setting, login, tìm kiếm - lọc, theme(dark-light), 
+-main
+-- sơ đồ số liệu, 
+-- thêm sửa xóa điều chỉnh số liệu
+- forder
+-- các chức năng thêm (map, fiter, setting,...) 
+3. các bước tạo dashboard
+- tạo layout 
+-- dùng thư viện mui.
+- tạo router
+- chọn công cụ để tạo dashboard 
+các hiệu ứng động bổ sung:
+- usecountUp để tạo hiệu ứng số nhảy trong bảng
+- useCountUp để thay api vào phần  end:
