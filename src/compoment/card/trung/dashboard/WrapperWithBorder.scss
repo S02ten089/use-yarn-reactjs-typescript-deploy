@@ -1,0 +1,195 @@
+/* Sidebar Styles (giữ nguyên) */
+.sidebar {
+  width: 100px; /* Tăng chiều rộng của Sidebar */
+  background-color: #2d3748; /* Nền đen */
+  color: white; /* Icon màu trắng */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  border-left: 4px solid black;
+  @media (max-width:768px) {
+    display: none;
+  }
+
+  .avatar {
+    margin-bottom: 2rem; /* Tăng khoảng cách dưới avatar */
+    border: 2px solid white; /* Viền trắng */
+    padding: 4px; /* Tăng padding cho avatar */
+  }
+
+  .icon-button {
+    font-size: 1.5rem; /* Tăng kích thước icon */
+    margin-bottom: 2.5rem; /* Khoảng cách giữa các icon */
+    color: white; /* Màu icon */
+    background-color: transparent; /* Nền trong suốt */
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center; /* Căn giữa icon */
+    align-items: center;
+
+    &:hover {
+      color: #63b3ed; /* Màu xanh khi hover */
+      transform: scale(1.2); /* Phóng to khi hover */
+    }
+  }
+
+  .bottom-icons {
+    margin-top: auto; /* Đẩy icon cuối xuống đáy */
+    margin-bottom: 2rem;
+
+    .icon-button {
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+/* Top Bar Styles */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #edf2f7; /* Nền xám nhạt */
+  padding: 0.01%;
+  border-top: 4px solid black;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng */
+  @media (max-width:768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin-left: 2.8%;
+
+    .search-icon {
+      position: absolute;
+      left: 8.2%; /* Khoảng cách từ trái */
+      color: #a0aec0; /* Màu xám nhạt */
+      font-size: 1.2rem; /* Kích thước icon */
+      pointer-events: none; /* Không ảnh hưởng đến sự tương tác */
+      @media (max-width:768px) {
+        display: none;
+      }
+    }
+  
+    input {
+      width: 70%; /* Tăng độ rộng để nổi bật */
+      padding: 0.75rem 1rem; /* Tăng khoảng cách padding */
+      border: none; /* Loại bỏ viền gốc */
+      border-radius: 12px; /* Bo góc lớn hơn */
+      font-size: 1rem; /* Tăng kích thước chữ */
+      background: linear-gradient(135deg, #edf2f7, #e2e8f0); /* Hiệu ứng nền gradient */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+      transition: all 0.3s ease; /* Hiệu ứng mượt mà khi hover hoặc focus */
+  
+      &:hover {
+        background: linear-gradient(135deg, #e6f1ff, #cfd8e3); /* Thay đổi màu khi hover */
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Đổ bóng đậm hơn */
+      }
+  
+      &:focus {
+        outline: none; /* Loại bỏ outline */
+        border: 2px solid #4299e1; /* Viền xanh dương đậm hơn */
+        box-shadow: 0 0 10px rgba(66, 153, 225, 0.6); /* Đổ bóng xanh lam */
+        background: #fff; /* Chuyển nền thành trắng khi focus */
+      }
+  
+      &::placeholder {
+        color: #a0aec0; /* Màu placeholder nhẹ nhàng */
+        font-style: italic; /* Tạo kiểu chữ nghiêng */
+      }
+    }
+  }
+  
+
+  .heading {
+    display: flex;
+    justify-content: center;  /* Căn giữa chiều ngang */
+    align-items: center;      /* Căn giữa chiều dọc */
+    padding-top: 0.51rem;
+    margin-bottom: -0.01rem;
+    flex: 1;
+    text-align: center;
+    font-size: 2.0rem; /* Tăng kích thước chữ */
+    font-weight: bold;
+    color: #2d3748; /* Màu đen đậm */
+    @media (max-width:768px) {
+      display: none;
+    }
+}
+
+
+  .actions {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    @media (max-width:768px) {
+      display: inline-block;
+      margin-top: 2%;
+    }
+  
+    /* Nút màu đỏ */
+    .btn-red {
+      background-color: #e53e3e; /* Màu đỏ */
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: #c53030; /* Đỏ đậm hơn */
+        transform: scale(1.1); /* Phóng to */
+      }
+    }
+  
+    /* Nút màu xanh */
+    .btn-blue {
+      background-color: #3182ce; /* Màu xanh */
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-left: 1rem; /* Khoảng cách giữa 2 nút */
+      transition: all 0.3s ease;
+  
+      &:hover {
+        background-color: #2b6cb0; /* Xanh đậm hơn */
+        transform: scale(1.1); /* Phóng to */
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .btn-red .chakra-text,
+    .btn-blue .chakra-text {
+      display: none; /* Ẩn text */
+    }
+
+    /* Điều chỉnh nút để vẫn cân đối khi chỉ có icon */
+    justify-content: center; /* Căn giữa icon */
+    .btn-red,
+    .btn-blue {
+      border-radius: 50% !important; /* Bo tròn nút */
+      width: 50px; /* Kích thước cố định cho nút */
+      height: 50px; /* Kích thước cố định cho nút */
+      align-items: center;
+      justify-content: center; /* Căn giữa icon trong nút */
+    }
+  }
+  
+  .clock {
+    font-size: 1.5rem; /* Tăng kích thước đồng hồ */
+    font-weight: bold;
+    color: red; /* Số màu đỏ */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng bóng chữ */
+    margin-left: 1rem; /* Khoảng cách với các phần khác */
+    @media (max-width:768px) {
+      display: none;
+    }
+  }
+}
