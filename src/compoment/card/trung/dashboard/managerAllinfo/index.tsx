@@ -12,35 +12,46 @@ import {
   VStack,
   HStack,
   Icon,
+  Link,
 } from "@chakra-ui/react";
 import { FiMenu, FiHome, FiSettings, FiUser } from "react-icons/fi";
+import { NavLink } from "react-router-dom";
 
-const Sidebar = () => (
+const Sidebar = ({ onClose }: { onClose: () => void }) => (
   <Box
     as="nav"
-    position="fixed"
+    position={{ base: "absolute", md: "fixed" }}
     left="0"
     top="0"
     h="100vh"
     w="250px"
     bg="gray.800"
     color="white"
-    p="4"
+    p="6"
+    display={{ base: "none", md: "block" }}
   >
-    <VStack align="start" spacing="4">
-      <Text fontSize="lg" fontWeight="bold">My Dashboard</Text>
-      <HStack>
-        <Icon as={FiHome} />
-        <Text>Home</Text>
-      </HStack>
-      <HStack>
-        <Icon as={FiUser} />
-        <Text>Users</Text>
-      </HStack>
-      <HStack>
-        <Icon as={FiSettings} />
-        <Text>Settings</Text>
-      </HStack>
+    <VStack align="start" spacing="6">
+      <Text fontSize="2xl" fontWeight="bold">
+        My Dashboard
+      </Text>
+      <NavLink to="/" onClick={onClose}>
+        <HStack spacing="3">
+          <Icon as={FiHome} boxSize="5" />
+          <Text>Home</Text>
+        </HStack>
+      </NavLink>
+      <NavLink to="/users" onClick={onClose}>
+        <HStack spacing="3">
+          <Icon as={FiUser} boxSize="5" />
+          <Text>Users</Text>
+        </HStack>
+      </NavLink>
+      <NavLink to="/settings" onClick={onClose}>
+        <HStack spacing="3">
+          <Icon as={FiSettings} boxSize="5" />
+          <Text>Settings</Text>
+        </HStack>
+      </NavLink>
     </VStack>
   </Box>
 );
@@ -49,8 +60,8 @@ const Header = ({ onOpen }: { onOpen: () => void }) => (
   <Flex
     as="header"
     w="full"
-    px="4"
-    py="2"
+    px="6"
+    py="4"
     bg="gray.700"
     alignItems="center"
     justifyContent="space-between"
@@ -60,10 +71,11 @@ const Header = ({ onOpen }: { onOpen: () => void }) => (
       icon={<FiMenu />}
       aria-label="Open menu"
       onClick={onOpen}
-      variant="outline"
+      variant="ghost"
       colorScheme="whiteAlpha"
+      size="lg"
     />
-    <Text fontSize="lg" fontWeight="bold">
+    <Text fontSize="xl" fontWeight="bold">
       Dashboard
     </Text>
   </Flex>
@@ -76,21 +88,19 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     <Flex minH="100vh" flexDirection="column">
       <Header onOpen={onOpen} />
       <Flex flex="1">
-        <Sidebar />
-        <Box flex="1" p="6" ml="250px" bg="gray.50">
+        <Sidebar onClose={onClose} />
+        <Box flex="1" p={{ base: "4", md: "8" }} ml={{ base: "0", md: "250px" }} bg="gray.50">
           {children}
         </Box>
       </Flex>
-      <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+      <Drawer placement="left" onClose={onClose} isOpen={isOpen} size="xs">
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerHeader>Menu</DrawerHeader>
+          <DrawerHeader fontWeight="bold" fontSize="lg">
+            Menu
+          </DrawerHeader>
           <DrawerBody>
-            <VStack align="start">
-              <Text>Home</Text>
-              <Text>Users</Text>
-              <Text>Settings</Text>
-            </VStack>
+            <Sidebar onClose={onClose} />
           </DrawerBody>
         </DrawerContent>
       </Drawer>
@@ -101,7 +111,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 export default function Dashboard() {
   return (
     <DashboardLayout>
-      <Text fontSize="xl">Welcome to your dashboard!</Text>
+      <Text fontSize="2xl" fontWeight="semibold">
+        Welcome to your dashboard!
+      </Text>
     </DashboardLayout>
   );
 }
