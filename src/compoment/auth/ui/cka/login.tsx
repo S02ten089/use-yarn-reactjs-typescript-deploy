@@ -47,6 +47,8 @@ const ModalDangNhap: React.FC<ModalDangNhapProps> = ({ onLoginSuccess }) => {
 
     if (Object.keys(newErrors).length === 0) {
       try {
+        const Login = process.env.REACT_APP_LOGIN_API_AAA || "lỗi login";
+        // const response = await axios.get(Login, {
         const response = await axios.get("https://6728bc566d5fa4901b6ab54b.mockapi.io/Login", {
           params: {
             account: email,

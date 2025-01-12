@@ -316,4 +316,7 @@ export const API_ROUTE = {
   DELETE_INSTALLMENT: "TblInstallment/delete",
   GET_LIST_INSTALLMENT: "TblInstallment/get-list",
   DETAIL_INSTALLMENT: "TblInstallment/get-detail",
+
+  //login
+  LOGIN_ACCOUT:"Login",
 };
