@@ -7,7 +7,7 @@ import ExcelReader from './xlsx';
 // import { Circle } from './ux/mapGoogle/circle';
 import ImageComponent from '../../showimg/test/img';
 import Ero from '../../notification/null/Ero';
-import MapGoogle from '../map';
+// import MapGoogle from '../map';
 // import header
 // import UI from './ui';
 // import fooder
@@ -37,7 +37,7 @@ const Ux: React.FC = () => {
       <br />
       <Ero/>
       <br />
-      <MapGoogle/>
+      {/* <MapGoogle/> */}
       <div>
         <ImageComponent/>
       </div>
