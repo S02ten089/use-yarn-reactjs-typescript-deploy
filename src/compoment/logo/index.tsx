@@ -7,15 +7,10 @@ const LogoComponent = () => {
 
   useEffect(() => {
     const fetchLogo = async () => {
-      const apiUrl = process.env.REACT_APP_URL_API_LOGO || ''; // Đảm bảo dùng đúng biến môi trường
-      if (!apiUrl) {
-        console.error('API URL không được định nghĩa.');
-        return;
-      }
-
       try {
-        const response = await axios.get(apiUrl);
-        if (response.data && response.data.logoUrl) {
+        const LogoApi = process.env.REACT_APP_Demo_APP_API_URL2 || "lỗi Logo";
+        const response = await axios.get(LogoApi);
+        if (response.data.logoUrl) {
           setLogoUrl(response.data.logoUrl); // Cập nhật logoUrl nếu API trả về
         }
       } catch (error) {
