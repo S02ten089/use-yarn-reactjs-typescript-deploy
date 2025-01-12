@@ -8,7 +8,8 @@ const LogoComponent = () => {
   useEffect(() => {
     const fetchLogo = async () => {
       try {
-        const response = await axios.get('URL_API_CUA_BAN'); // Thay thế URL_API_CUA_BAN bằng URL API của bạn
+        const LogoApi = process.env.REACT_APP_Demo_APP_API_URL2 || "lỗi Logo";
+        const response = await axios.get(LogoApi);
         if (response.data.logoUrl) {
           setLogoUrl(response.data.logoUrl); // Cập nhật logoUrl nếu API trả về
         }
