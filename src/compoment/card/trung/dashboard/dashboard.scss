@@ -38,21 +38,33 @@
     @media (min-width: 900px) {
       grid-template-columns: repeat(3, 1fr);
     }
-  }
-  
-  .stat {
-    background: #2d3748;
-    color: #fff;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    .stat {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      background: #330099;
+      border-radius: 15px;
+      box-shadow: 
+          10px 10px 20px #c9c9c9,    // Ánh sáng nhẹ bên dưới
+          -10px -10px 20px #330099, // Ánh sáng tím bên trên
+          0 0 30px #c9c9c9,         // Ánh sáng mờ trắng rực rỡ
+          0 0 60px #330099,         // Ánh sáng mờ tím xa
+          0 0 100px #330099;        // Ánh sáng mạnh hơn ở khoảng cách xa
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+    }    
   }
   
   .stat-label {
-    font-size: lg;
+    font-size: 18px;
     margin-bottom: 8px;
   }
   

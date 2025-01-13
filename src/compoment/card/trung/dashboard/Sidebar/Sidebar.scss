@@ -1,0 +1,47 @@
+/* Sidebar Styles */
+.sidebar {
+    width: 70px;
+    background-color: #2d3748;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    border-left: 4px solid black;
+  
+    @media (max-width: 768px) {
+      display: none;
+    }
+  
+    .avatar {
+      margin-bottom: 2rem;
+      border: 2px solid white;
+      padding: 4px;
+    }
+  
+    .icon-button {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+      color: white;
+      background-color: transparent;
+      transition: all 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      &:hover {
+        color: #63b3ed;
+        transform: scale(1.2);
+      }
+    }
+  
+    .bottom-icons {
+      margin-top: auto;
+      margin-bottom: 2rem;
+  
+      .icon-button {
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+  
