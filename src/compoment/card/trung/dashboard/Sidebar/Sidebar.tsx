@@ -10,6 +10,7 @@ import {
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
+import { Link } from "react-router-dom"
 import "./Sidebar.scss";
 
 const Sidebar: React.FC = () => {
@@ -17,7 +18,13 @@ const Sidebar: React.FC = () => {
     <Flex className="sidebar">
       <Avatar className="avatar" size="md" name="User Name" />
       <Box>
-        <IconButton className="icon-button" aria-label="Home" icon={<FaHome />} variant="ghost" />
+        <Link to="/tien/dashboard">
+          <IconButton className="icon-button" aria-label="Home" icon={<FaHome />} variant="ghost" />
+        </Link>
+        <Link to="/tien/dashboard/contact">
+          <IconButton className="icon-button" aria-label="Dashboard" icon={<FaTachometerAlt />} variant="ghost" />
+        </Link>
+        
         <IconButton className="icon-button" aria-label="Dashboard" icon={<FaTachometerAlt />} variant="ghost" />
         <IconButton className="icon-button" aria-label="Admin" icon={<FaUserShield />} variant="ghost" />
         <IconButton className="icon-button" aria-label="Messenger" icon={<FaEnvelope />} variant="ghost" />
