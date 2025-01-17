@@ -190,6 +190,25 @@ const Trung: React.FC = () => {
                             To the Home page
                         </Button>
                     </Link>
+                    <Link to="/trung/dashboard">
+                        <Button
+                            fontWeight="bold"
+                            variant="outline"
+                            sx={{
+                                margin: "0.5rem",
+                                transition: "all 0.3s ease",
+                                backgroundColor:"#fff",
+                                color:"#663399",
+                                "&:hover": {
+                                    transform: "scale(1.05)",
+                                    backgroundColor: "#ccc",
+                                    color: "#663399",
+                                },
+                            }}
+                        >
+                            To the Dashboard
+                        </Button>
+                    </Link>
                 </Box>
             </div>
         </Box>
