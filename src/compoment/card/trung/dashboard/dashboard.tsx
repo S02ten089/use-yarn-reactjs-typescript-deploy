@@ -1,11 +1,11 @@
 import Home from "../../../dashboard/views/home/homeView";
-import WrapperWithBorder from "./WrapperWithBorder";
+// import WrapperWithBorder from "./WrapperWithBorder";
 
 const dashboardTest = () => {
     return (
       <>
         {/* <h1>Home</h1> */}
-        <WrapperWithBorder children={undefined}/>
+        {/* <WrapperWithBorder children={undefined}/> */}
         <Home/>
       </>
     );
