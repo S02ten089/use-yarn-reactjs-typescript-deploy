@@ -9,10 +9,10 @@ import {
   import "./App.css";
   
   //css
-  import "@elastic/eui/dist/eui_theme_light.min.css";
+  // import "@elastic/eui/dist/eui_theme_light.min.css";
   import "@mantine/core/styles.css";
   import "@mantine/notifications/styles.css";
-  import '@mantine/tiptap/styles.css';
+  // import '@mantine/tiptap/styles.css';
   import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
   import "react-toastify/dist/ReactToastify.css";
   import router from "./_setup/router/routes";

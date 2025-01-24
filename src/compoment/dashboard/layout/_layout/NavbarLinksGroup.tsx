@@ -9,7 +9,7 @@ import {
   rem,
 } from "@mantine/core";
 import { IconCalendarStats, IconChevronRight } from "@tabler/icons-react";
-import classes from "../style/NavbarLinksGroup.module.scss";
+import classes from "../style/NavbarLinksGroup.module.css";
 import { LinksGroupProps } from "../../_database/_base/LinksGroupProps";
 import { useNavigate, useLocation } from "react-router-dom";
 

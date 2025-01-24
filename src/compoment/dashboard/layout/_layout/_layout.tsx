@@ -29,7 +29,7 @@ import { AuthProvider } from "../../_database/helper/IAuthProvider";
 import { Notifications } from "@mantine/notifications";
 import { SkeletonBase } from "./_skeleton";
 import { IconLogout, IconSwitchHorizontal } from "@tabler/icons-react";
-import classes from "../style/NavbarSegmented.module.scss";
+import classes from "../style/NavbarSegmented.module.css";
 import { _sideNavData } from "../../_setup/navdata/_sideNavData";
 import { LinksGroup } from "./NavbarLinksGroup";
 import { isNullOrEmpty } from "../../_database/extension/StringExtension";
