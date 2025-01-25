@@ -67,7 +67,7 @@ import axios from 'axios';
 
                 <Route path='/services/card' element={<ServiceCard/>}/>
                 {/* <Route path='/tien/dashboard' element={<TienDashboard/>}/> */}
-                <Route path='/*' element={<DashboardRouter/>}/>
+                <Route path='/tien/*' element={<DashboardRouter/>}/>
 
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
