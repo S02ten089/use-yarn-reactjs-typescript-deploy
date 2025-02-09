@@ -25,7 +25,7 @@ import {
   });
   cache.compat = true;
   
-  function App() {
+  function AppDashboard() {
     const queryClient = new QueryClient();
   
     return (
@@ -36,4 +36,4 @@ import {
     );
   }
   
-  export default App;
+  export default AppDashboard;

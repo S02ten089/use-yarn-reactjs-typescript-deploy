@@ -16,7 +16,7 @@ import axios from 'axios';
   const AI = React.lazy(()=> import('../path/AI/index'));
   const RouterCardTrung = React.lazy(()=> import('../card/trung/router/routerCardTrung'));
   // const TienDashboard = React.lazy(() => import('../dashboard/views/home/homeView'));
-  const DashboardRouter = React.lazy(() => import('../dashboard/router/dashboardRouter'));
+  // const DashboardRouter = React.lazy(() => import('../dashboard/router/dashboardRouter'));
   
 
   const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
@@ -67,7 +67,7 @@ import axios from 'axios';
 
                 <Route path='/services/card' element={<ServiceCard/>}/>
                 {/* <Route path='/tien/dashboard' element={<TienDashboard/>}/> */}
-                <Route path='/tien/*' element={<DashboardRouter/>}/>
+                {/* <Route path='/tien/*' element={<DashboardRouter/>}/> */}
 
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />

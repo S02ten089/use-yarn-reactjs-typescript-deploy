@@ -1,27 +1,39 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import { AuthProvider } from './hooks/useAuth';
-import RouterSetUp from './compoment/router-setup';
+import {
+  EuiProvider,
+  euiStylisPrefixer
+} from "@elastic/eui";
+import createCache from "@emotion/cache";
+import {
+  RouterProvider
+} from "react-router-dom";
+import "./App.css";
 
-//===//
-import { createRoot } from 'react-dom/client'; // Đúng import từ react-dom/client
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { ColorModeScript } from "@chakra-ui/react";
+//css
+// import "@elastic/eui/dist/eui_theme_light.min.css";
+import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
+// import '@mantine/tiptap/styles.css';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "react-toastify/dist/ReactToastify.css";
+import router from "./compoment/dashboard/_setup/router/routes";
 
-const config = {
-  initialColorMode: "light", // Chế độ khởi đầu
-  useSystemColorMode: false, // Không dùng chế độ theo hệ thống
-};
-const theme = extendTheme({ config });
+const container = document.querySelector('meta[name="emotion-styles"]');
+const cache = createCache({
+  key: "eui",
+  container: container || undefined,
+  stylisPlugins: [euiStylisPrefixer],
+});
+cache.compat = true;
 
-// Sử dụng createRoot từ react-dom/client
-const container = document.getElementById('root');
-if (container) {
-  const root = createRoot(container); // Tạo root từ container
-  root.render(
-    <ChakraProvider theme={theme}>
-      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-      <RouterSetUp /> {/* Dùng RouterSetUp ở đây */}
-    </ChakraProvider>
+function App() {
+  const queryClient = new QueryClient();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+      <EuiProvider colorMode="light" cache={cache}></EuiProvider>
+    </QueryClientProvider>
   );
 }
+
+export default App;

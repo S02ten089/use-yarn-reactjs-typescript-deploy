@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import RouterSetUp from "./router-setup";
+import AppDashboard from "./dashboard/App";
+import { MantineProvider, MantineThemeProvider } from "@mantine/core";
 // import UI from "./ui";
 // import Ux from "./ux";
 
@@ -11,6 +13,11 @@ const App: React.FC = () => {
         {/* <UI/>
         <Ux/> */}
         <RouterSetUp/>
+        {/* <React.StrictMode> */}
+        <MantineProvider >
+        <AppDashboard/>
+        </MantineProvider >
+        {/* </React.StrictMode> */}
     </Box>
   );
 };
