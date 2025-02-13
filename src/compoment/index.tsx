@@ -14,9 +14,9 @@ const App: React.FC = () => {
         <Ux/> */}
         <RouterSetUp/>
         {/* <React.StrictMode> */}
-        <MantineProvider >
+        {/* <MantineProvider >
         <AppDashboard/>
-        </MantineProvider >
+        </MantineProvider > */}
         {/* </React.StrictMode> */}
     </Box>
   );

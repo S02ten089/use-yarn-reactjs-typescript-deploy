@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
 import React, { Suspense, useEffect, useState } from 'react';
 import axios from 'axios';
+import { MantineProvider } from '@mantine/core';
+import AppDashboard from '../dashboard/App';
 
 
   const Home = React.lazy(() => import('../path/home/Home'));
@@ -15,7 +17,7 @@ import axios from 'axios';
   const Admin = React.lazy(() => import('../path/admin/Admin'));
   const AI = React.lazy(()=> import('../path/AI/index'));
   const RouterCardTrung = React.lazy(()=> import('../card/trung/router/routerCardTrung'));
-  // const TienDashboard = React.lazy(() => import('../dashboard/views/home/homeView'));
+  const Dashboard = React.lazy(() => import('../dashboard/index'));
   // const DashboardRouter = React.lazy(() => import('../dashboard/router/dashboardRouter'));
   
 
@@ -64,6 +66,7 @@ import axios from 'axios';
                 <Route path='/trung/*' element={<RouterCardTrung/>}/>
                 <Route path='/card/*' element={<Card/>}/>
                 <Route path='/test/*' element={<Test/>}/>
+                <Route path='/dashboard/*' element={<Dashboard/>}/>
 
                 <Route path='/services/card' element={<ServiceCard/>}/>
                 {/* <Route path='/tien/dashboard' element={<TienDashboard/>}/> */}
@@ -75,6 +78,9 @@ import axios from 'axios';
             </Suspense>
           </Box>
           </Router>
+          <MantineProvider >
+        <AppDashboard/>
+        </MantineProvider >
         </ChakraProvider>
       );
     };
