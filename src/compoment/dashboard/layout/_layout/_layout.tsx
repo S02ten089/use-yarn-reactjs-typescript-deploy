@@ -46,7 +46,7 @@ export const Layout = () => {
 
   const location = useLocation();
   const [progress, setProgress] = useState(true);
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   const navigate = useNavigate();
   const [loadingSkeleton, setLoadingSkeleton] = useState(true);
   const [mobileOpened, { toggle: toggleMobile }] = useDisclosure();

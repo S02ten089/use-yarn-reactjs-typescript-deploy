@@ -15,7 +15,7 @@ import {
   // import '@mantine/tiptap/styles.css';
   import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
   import "react-toastify/dist/ReactToastify.css";
-  import router from "./_setup/router/routes";
+  // import router from "./_setup/router/routes";
   
   const container = document.querySelector('meta[name="emotion-styles"]');
   const cache = createCache({
@@ -30,7 +30,7 @@ import {
   
     return (
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        {/* <RouterProvider router={router} /> */}
         <EuiProvider colorMode="light" cache={cache}></EuiProvider>
       </QueryClientProvider>
     );

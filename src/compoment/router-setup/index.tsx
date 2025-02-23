@@ -43,9 +43,6 @@ import AppDashboard from '../dashboard/App';
     }, []);
 
       return (
-        <ChakraProvider>
-          <Router>
-            {/* Routes với Suspense */}
           <Box 
           p={numberApi || 4} //chế độ lồi
           >
@@ -77,11 +74,6 @@ import AppDashboard from '../dashboard/App';
               </Routes>
             </Suspense>
           </Box>
-          </Router>
-          <MantineProvider >
-        <AppDashboard/>
-        </MantineProvider >
-        </ChakraProvider>
       );
     };
     
