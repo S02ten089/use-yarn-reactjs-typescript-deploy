@@ -30,7 +30,7 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      {/* <RouterProvider router={router} /> */}
       <EuiProvider colorMode="light" cache={cache}></EuiProvider>
     </QueryClientProvider>
   );
