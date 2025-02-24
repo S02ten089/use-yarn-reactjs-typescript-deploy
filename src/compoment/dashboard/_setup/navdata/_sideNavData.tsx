@@ -50,7 +50,7 @@ import {
         },
         {
           label: "Phường/Xã",
-          link: "commune",
+          link: "dashboard/commune",
         },
       ],
     },
@@ -61,6 +61,10 @@ import {
       links: [
         {
           label: "Danh sách sản phẩm",
+          link: "dashboard/product-list",
+        },
+        {
+          label: "sản phẩm đề mô",
           link: "/product-list",
         },
         // {

@@ -15,8 +15,8 @@ import {
   Link,
   redirect,
   useNavigate,
-  useNavigation,
-  useNavigationType,
+  // useNavigation,
+  // useNavigationType,
 } from "react-router-dom";
 import { _sideNavData } from "../../_setup/navdata/_sideNavData";
 import { isNullOrEmpty } from "../../_database/extension/StringExtension";

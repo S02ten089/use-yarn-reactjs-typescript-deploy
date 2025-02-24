@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { ChakraProvider, Box, Spinner } from '@chakra-ui/react';
 import React, { Suspense, useEffect, useState } from 'react';
 import axios from 'axios';
+import { MantineProvider } from '@mantine/core';
+import AppDashboard from '../dashboard/App';
 
 
   const Home = React.lazy(() => import('../path/home/Home'));
@@ -15,8 +17,8 @@ import axios from 'axios';
   const Admin = React.lazy(() => import('../path/admin/Admin'));
   const AI = React.lazy(()=> import('../path/AI/index'));
   const RouterCardTrung = React.lazy(()=> import('../card/trung/router/routerCardTrung'));
-  // const TienDashboard = React.lazy(() => import('../dashboard/views/home/homeView'));
-  const DashboardRouter = React.lazy(() => import('../dashboard/router/dashboardRouter'));
+  const Dashboard = React.lazy(() => import('../dashboard/index'));
+  // const DashboardRouter = React.lazy(() => import('../dashboard/router/dashboardRouter'));
   
 
   const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
@@ -41,9 +43,6 @@ import axios from 'axios';
     }, []);
 
       return (
-        <ChakraProvider>
-          <Router>
-            {/* Routes với Suspense */}
           <Box 
           p={numberApi || 4} //chế độ lồi
           >
@@ -63,19 +62,18 @@ import axios from 'axios';
                 <Route path='/admin/*' element={<Admin/>}/>
                 <Route path='/trung/*' element={<RouterCardTrung/>}/>
                 <Route path='/card/*' element={<Card/>}/>
-                <Route path='/*' element={<Test/>}/>
+                <Route path='/test/*' element={<Test/>}/>
+                <Route path='/dashboard/*' element={<Dashboard/>}/>
 
                 <Route path='/services/card' element={<ServiceCard/>}/>
                 {/* <Route path='/tien/dashboard' element={<TienDashboard/>}/> */}
-                <Route path='/tien/*' element={<DashboardRouter/>}/>
+                {/* <Route path='/tien/*' element={<DashboardRouter/>}/> */}
 
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
               </Routes>
             </Suspense>
           </Box>
-          </Router>
-        </ChakraProvider>
       );
     };
     

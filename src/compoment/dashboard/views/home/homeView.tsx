@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <>
       <h1>Home</h1>
+      <h2>Web đang update!</h2>
     </>
   );
 };

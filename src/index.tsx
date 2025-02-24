@@ -4,13 +4,17 @@ import './index.css';
 // import App from './App';
 import App from './compoment';
 import reportWebVitals from './reportWebVitals';
-
+import AppDashboard from './compoment/dashboard/App'
+import { MantineProvider } from '@mantine/core';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <App />
+    {/* <MantineProvider >
+    <AppDashboard/>
+    </MantineProvider> */}
   </React.StrictMode>
 );
 

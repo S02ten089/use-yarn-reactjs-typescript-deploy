@@ -131,6 +131,34 @@ const Commune = () => {
     },
   ];
 
+
+  const fakeDataByTien = [
+    {
+      communeId: 1,
+      communeName: "Phường 1",
+      communeCode: "P001",
+      districtCode: "D001",
+    },
+    {
+      communeId: 2,
+      communeName: "Phường 2",
+      communeCode: "P002",
+      districtCode: "D001",
+    },
+    {
+      communeId: 3,
+      communeName: "Xã A",
+      communeCode: "XA001",
+      districtCode: "D002",
+    },
+    {
+      communeId: 4,
+      communeName: "Xã B",
+      communeCode: "XA002",
+      districtCode: "D002",
+    },
+  ];
+
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>();
   const [pagination, setPagination] = useState<Pagination>(paginationBase);
@@ -323,12 +351,13 @@ const Commune = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      await fetchDataCommune(
-        pagination.pageIndex,
-        pagination.pageSize,
-        paramSearch?.keyWord,
-        paramSearch?.inActive
-      );
+      setDatas(fakeDataByTien);
+      // await fetchDataCommune(
+      //   pagination.pageIndex,
+      //   pagination.pageSize,
+      //   paramSearch?.keyWord,
+      //   paramSearch?.inActive
+      // );
     };
     fetchData();
   }, [pagination.pageIndex, pagination.pageSize]);
