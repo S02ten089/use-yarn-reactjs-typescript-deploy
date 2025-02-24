@@ -5,11 +5,12 @@ import { Spinner, Box } from '@chakra-ui/react';
   const CardAbout = React.lazy(() => import('../allInfo'));
   const Trung = React.lazy(()=> import('../index'));
   const AddInfo = React.lazy(()=> import('../addAllInfo'));
-  const Dashboard = React.lazy(()=> import('../dashboard/index'));
-  const ManagerCardInfo = React.lazy(()=> import('../dashboard/managerAllinfo'));
+  // const Dashboard = React.lazy(()=> import('../dashboard/index'));
+  // const ManagerCardInfo = React.lazy(()=> import('../dashboard/managerAllinfo'));
 //   const CardAbout = React.lazy(() => import('./allInfo'));
 
   const DashboardTest = React.lazy(()=> import('../dashboard/dashboard'));
+  const Product = React.lazy(()=> import ('../dashboard/product/index'))
 
   const RouterCard: React.FC = () => {
       return (
@@ -21,9 +22,9 @@ import { Spinner, Box } from '@chakra-ui/react';
                 <Route path='/' element={<Trung/>}/>
                 <Route path='/addinfoall' element={<AddInfo/>}/>
                 <Route path="/:link" element={<CardAbout />} />
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/managertrung" element={<ManagerCardInfo />} />
-
+                {/* <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/managertrung" element={<ManagerCardInfo />} /> */}
+                <Route path="/product" element = {<Product/>} />
                 <Route path="/Test" element={<DashboardTest />} />
               </Routes>
             </Suspense>
