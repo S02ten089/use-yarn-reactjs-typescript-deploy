@@ -62,7 +62,6 @@ import axios from 'axios';
                 <Route path='/admin/*' element={<Admin/>}/>
                 <Route path='/trung' element={<Trung/>}/>
                 <Route path='/addinfoall' element={<AddInfo/>}/>
-                <Route path='/AI' element={<AI/>}/>
 
                 <Route path='/services/card' element={<ServiceCard/>}/>
                 <Route path='/card/*' element={<Card/>}/>
@@ -70,6 +69,8 @@ import axios from 'axios';
                 <Route path='/test' element={<TestHome/>}/>
                 <Route path='/testLogin' element={<TestLogin/>}/>
                 <Route path='/products' element={<ProductList/>}/>
+
+                <Route path='/AI/OX' element={<AI/>}/>
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
               </Routes>
