@@ -17,6 +17,7 @@ import axios from 'axios';
   const AddInfo = React.lazy(()=> import('../card/trung/addAllInfo'));
   const AI = React.lazy(()=> import('../path/AI/index'));
   const EditPage = React.lazy(()=> import('../path/EditPage/index'));
+  const Chat = React.lazy(()=> import('../path/chat/index'));
 
   const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
   const Card = React.lazy(() => import('../path/card/routerCard'));
@@ -62,6 +63,7 @@ import axios from 'axios';
                 <Route path='/admin/*' element={<Admin/>}/>
                 <Route path='/trung' element={<Trung/>}/>
                 <Route path='/addinfoall' element={<AddInfo/>}/>
+                <Route path='/chat' element={<Chat/>}/>
 
                 <Route path='/services/card' element={<ServiceCard/>}/>
                 <Route path='/card/*' element={<Card/>}/>
