@@ -16,7 +16,7 @@ import axios from 'axios';
   const Trung = React.lazy(()=> import('../card/trung/index'));
   const AddInfo = React.lazy(()=> import('../card/trung/addAllInfo'));
   const AI = React.lazy(()=> import('../path/AI/index'));
-  
+  const EditPage = React.lazy(()=> import('../path/EditPage/index'));
 
   const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
   const Card = React.lazy(() => import('../path/card/routerCard'));
@@ -71,6 +71,8 @@ import axios from 'axios';
                 <Route path='/products' element={<ProductList/>}/>
 
                 <Route path='/AI/OX' element={<AI/>}/>
+
+                <Route path="/edit-page" element={<EditPage />} />
                   {/* Chuyển hướng tất cả các đường dẫn không hợp lệ về trang chủ */}
                   <Route path="*" element={<Navigate to="/" />} />
               </Routes>
