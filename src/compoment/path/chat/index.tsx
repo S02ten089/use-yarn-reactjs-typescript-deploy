@@ -37,7 +37,7 @@ export default function AnonymousBoard() {
         }
       );
       setContent('');
-      fetchMessages(); // Tải lại danh sách sau khi gửi
+      setTimeout(fetchMessages, 300); // Tải lại danh sách sau khi gửi
     } catch (error) {
       console.error('Lỗi khi gửi tin nhắn:', error);
     }
