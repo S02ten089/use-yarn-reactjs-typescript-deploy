@@ -15,6 +15,7 @@ yarn add --dev @next/eslint-plugin-next
 yarn add sharp
 yarn add @chakra-ui/icons
 yarn add react-icons
+yarn add react-google-recaptcha
 
  Ẩn mã nguồn trong DevTools bằng sourceMap
 Cấu hình sourceMap để mã nguồn không hiển thị trong DevTools:
