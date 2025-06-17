@@ -82,10 +82,13 @@ const HeroSection: React.FC = () => {
             <Stack direction={["column", "row"]} spacing={4}>
               <Button colorScheme="teal" size="lg" variant="solid"
               onClick={handleStar}
+              backgroundColor={"#81E6D9"}
+              color={"black"}
               >
                 Get Started
               </Button>
-              <Button colorScheme="whiteAlpha" size="lg" variant="outline">
+              <Button colorScheme="whiteAlpha" size="lg" variant="outline"
+              color={"rgba(255, 255, 255, 0.08)"}>
                 Learn More
               </Button>
             </Stack>

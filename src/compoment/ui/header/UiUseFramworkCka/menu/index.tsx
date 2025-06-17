@@ -77,10 +77,18 @@ const MobileMenuToggle: React.FC<MobileMenuToggleProps> = ({ toggleMenu }) => {
   return (
     <Menu>
       <MenuButton className={styles.menuButtonMobile} as={Button} onClick={toggleMenu} variant="outline" size="sm">
-        <FaBars />
+        <FaBars
+        style={{ 
+          color: 'rgba(255, 255, 255, 0.92)',
+         }}
+        color="white" />
       </MenuButton>
-      <MenuList bg='none'>
-        <Box display="flex" justifyContent="space-around" padding="4px">
+      <MenuList bg={'none'}
+        boxShadow={'0 0 10px rgba(0, 0, 0, 0.5)'}
+        borderColor={'rgba(255, 255, 255, 0.16)'}
+      >
+        <Box display="flex" justifyContent="space-around" padding="4px"
+        color={'white'}>
           {horizontalMenuItems.map((item) => (
             <MenuItem
               key={item.value}

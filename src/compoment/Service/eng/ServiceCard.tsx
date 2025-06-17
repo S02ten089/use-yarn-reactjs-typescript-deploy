@@ -13,7 +13,9 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, image,link }) => {
   return (
     <Box className={styles.card} boxShadow="lg" p={5} rounded="md" overflow="hidden">
-      <Image src={image} alt={title} className={styles.image} />
+      <Image src={image} className={styles.image} 
+      display={'none'} //Tạm ẩn hình ảnh
+      />
       <Heading as="h3" size="md" mt={3} className={styles.title}>{title}</Heading>
       <Text mt={2} className={styles.description}>{description}</Text>
       <Button colorScheme="blue" variant="solid" mt={4} className={styles.button}

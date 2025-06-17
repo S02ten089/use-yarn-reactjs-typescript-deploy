@@ -1,4 +1,3 @@
-// pages/Contact.tsx
 import React, { useState } from 'react';
 import { 
   Box, 
@@ -13,6 +12,14 @@ import {
   Text 
 } from '@chakra-ui/react';
 
+const API_CONFIG = {
+  BASE_URL: process.env.REACT_APP_LINK_SERVER || '',
+  ENDPOINTS: {
+    // GET_MESSAGES: process.env.REACT_APP_API_LINK_GET_CHAT || '',
+    POST_LINK: process.env.REACT_APP_API_LINK_POST_CONTACT || '',
+  },
+};
+
 const Contact: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -21,12 +28,29 @@ const Contact: React.FC = () => {
   const toast = useToast();
 
   // Xử lý khi gửi bình luận
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Giả lập xử lý gửi bình luận
-    setTimeout(() => {
+    try {
+      const response = await fetch(`${API_CONFIG.BASE_URL}/database/${API_CONFIG.ENDPOINTS.POST_LINK}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Gửi tin nhắn thất bại');
+      }
+
+      const result = await response.json();
+
       toast({
         title: 'Gửi thành công!',
         description: 'Cảm ơn bạn đã liên hệ với chúng tôi.',
@@ -34,11 +58,22 @@ const Contact: React.FC = () => {
         duration: 3000,
         isClosable: true,
       });
-      setIsSubmitting(false);
+
+      // Reset form
       setName('');
       setEmail('');
       setMessage('');
-    }, 2000); // Giả lập thời gian gửi bình luận
+    } catch (error) {
+      toast({
+        title: 'Lỗi',
+        description: 'Đã có lỗi xảy ra khi gửi tin nhắn. Vui lòng thử lại.',
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -53,6 +88,7 @@ const Contact: React.FC = () => {
           <FormControl id="name" isRequired>
             <FormLabel color='#f0f8ff9c'>Tên của bạn</FormLabel>
             <Input 
+              color='#ff4900'
               type="text" 
               value={name} 
               onChange={(e) => setName(e.target.value)} 
@@ -64,6 +100,7 @@ const Contact: React.FC = () => {
           <FormControl id="email" isRequired>
             <FormLabel color='#f0f8ff9c'>Email của bạn</FormLabel>
             <Input 
+              color='#ff4900'
               type="email" 
               value={email} 
               onChange={(e) => setEmail(e.target.value)} 
@@ -75,7 +112,7 @@ const Contact: React.FC = () => {
           <FormControl id="message" isRequired>
             <FormLabel color='#f0f8ff9c'>Tin nhắn</FormLabel>
             <Textarea 
-            color='#ff4900'
+              color='#ff4900'
               value={message} 
               onChange={(e) => setMessage(e.target.value)} 
               placeholder="Nhập nội dung tin nhắn" 

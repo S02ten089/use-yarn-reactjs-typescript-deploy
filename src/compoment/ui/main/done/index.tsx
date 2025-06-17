@@ -1,31 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './done.module.scss';
-import { Box, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton } from '@chakra-ui/react';
+import { Box, Button, Modal, ModalOverlay, ModalContent, ModalHeader, ModalBody, ModalCloseButton, filter } from '@chakra-ui/react';
 // import QRCode from 'qrcode.react'; // Thêm thư viện để tạo QR Code
 import QR from '../../../../showimg/img/qr.png'
 import QrCodeApi from './QrCodeApi';
+import axios from "axios";
+
+interface Entry {
+  id: number;
+  name: string;
+  amount: string;
+}
+
+const API_CONFIG = {
+  BASE_URL: process.env.REACT_APP_LINK_SERVER || "",
+  ENDPOINTS: {
+    POST_LINK: process.env.REACT_APP_API_LINK_GET_BOARD_DONE || "",
+  },
+};
 
 const DonePage: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [supporters, setSupporters] = useState<Entry[]>([]);
+  const [salls, setSalls] = useState<Entry[]>([]);
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
 
-  // Dữ liệu giả cho danh sách ủng hộ
-  const supporters = [
-    { id: 1, name: "Nguyễn Quang Linh", amount: "100.000$" },
-    { id: 2, name: "Vũ Thanh Hùng", amount: "100$" },
-    { id: 3, name: "Vũ Trọng Tiến", amount: "100.000 VNĐ" },
-    { id: 4, name: "Phạm Thị D", amount: "250.000 VNĐ" },
-  ];
-  const salls = [
-    { id: 1, name: "Duy Trì Serve", amount: "100.000VND/1mon" },
-    { id: 2, name: "Duy Trì Domain", amount: "100$/1year" },
-    { id: 3, name: "Tiền đi chơi tiền bỉm sữa", amount: "100.000 VNĐ" },
-    { id: 4, name: "Phần Mềm Sử Dụng", amount: "250.000 VNĐ" },
-    { id: 5, name: "Logo", amount: "" },
-  ];
-
+  const onOff = "none"; // Biến này có thể được sử dụng để điều khiển hiển thị của ModalHeader
+  useEffect(() => {
+    axios.get(`${API_CONFIG.BASE_URL}/database/${API_CONFIG.ENDPOINTS.POST_LINK}`)
+      .then(res => {
+        setSupporters(res.data.supporters);
+        setSalls(res.data.salls);
+      })
+      .catch(err => {
+        console.error("Lỗi khi tải dữ liệu:", err);
+      });
+  }, []);
   return (
     <div className={styles.donePage}>
       <Box className={styles.content}>
@@ -71,16 +82,27 @@ const DonePage: React.FC = () => {
       <Modal isOpen={isOpen} onClose={closeModal}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Quét mã QR để ủng hộ</ModalHeader>
-          <ModalCloseButton />
+          <ModalHeader
+          display={onOff}
+          >Quét mã QR để ủng hộ</ModalHeader>
+          <ModalCloseButton 
+          display={onOff}
+          />
           <ModalBody>
-            <h1>
+            <h1
+            style={{ display: onOff }}
+            >
               Tạm sử dụng hình ảnh qr - update(call api ví dụ: /qr)
             </h1>
-            <img src={QR}></img>
-            <QrCodeApi/>
+            <img src={QR}
+            style={{filter: "brightness(17) contrast(3)"}}></img>
+            <QrCodeApi
+            
+            />
             {/* <QRCode value="https://example.com/support" size={256} /> */}
-            <p className={styles.qrText}>Quét mã QR này để ủng hộ cho chúng tôi!</p>
+            <p className={styles.qrText}
+            style={{ display: onOff }}
+            >Quét mã QR này để ủng hộ cho chúng tôi!</p>
           </ModalBody>
         </ModalContent>
       </Modal>
