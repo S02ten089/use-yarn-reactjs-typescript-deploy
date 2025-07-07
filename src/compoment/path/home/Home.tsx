@@ -5,6 +5,7 @@ import UiUseCka from '../../ui/header/UiUseFramworkCka/App';
 import HeroSection from '../../ui/hero';
 import Footer from '../../ui/fooder/footer';
 import Chat from '../AI/chatBox/Chat';
+import { Banner } from '../../ui/main/components/Banner';
 
 const Home: React.FC = () => {
   return (
@@ -19,7 +20,7 @@ const Home: React.FC = () => {
       {/* Hero */}
       <HeroSection/>
       {/* Ux - Ui - Main */}
-      
+      <Banner/>
       
       {/* Footer */}
       <Footer/>
