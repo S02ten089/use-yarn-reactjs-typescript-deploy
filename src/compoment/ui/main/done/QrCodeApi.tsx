@@ -28,7 +28,7 @@ const QrCodeApi: React.FC = () => {
       {qrUrl ? (
         <QRCodeSVG value={qrUrl} />
       ) : (
-        <Text>Loading QR code...</Text>
+        <Text>...</Text> // update data or add archive
       )}
     </>
   );

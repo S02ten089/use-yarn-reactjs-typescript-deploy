@@ -1,5 +1,6 @@
 import { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import axios, { AxiosError } from 'axios';
+import AppMenu from './menu';
 
 // Constants
 const API_CONFIG = {
@@ -86,62 +87,69 @@ export default function AnonymousBoard() {
   }, []);
 
   return (
-    <div className="anonymous-board" style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
-      <h2>🕵️ Thảo luận ẩn danh</h2>
-
-      {error && (
-        <div style={{ color: 'red', marginBottom: '10px' }}>
-          {error}
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit}>
-        <textarea
-          value={content}
-          onChange={handleChange}
-          rows={4}
-          disabled={isLoading}
-          placeholder="Viết gì đó (ẩn danh)..."
-          style={{ 
-            width: '100%', 
-            marginBottom: '10px',
-            resize: 'vertical'
-          }}
-        />
+    <div>
+      <div style={{
         
-        <button 
-          type="submit" 
-          disabled={isLoading || !content.trim()}
-          style={{ 
-            padding: '8px 16px',
-            opacity: isLoading || !content.trim() ? 0.6 : 1
-          }}
-        >
-          {isLoading ? 'Đang gửi...' : 'Gửi'}
-        </button>
-      </form>
+      }}>
+        <AppMenu />
+      </div>
+      <div className="anonymous-board" style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
+        <h2>🕵️ Thảo luận ẩn danh</h2>
 
-      {isLoading && messages.length === 0 ? (
-        <div>Đang tải tin nhắn...</div>
-      ) : (
-        <ul style={{ listStyle: 'none', paddingLeft: 0, marginTop: '20px' }}>
-          {messages.map((msg) => (
-            <li 
-              key={msg.id} 
-              style={{ 
-                marginBottom: '15px', 
-                borderBottom: '1px solid #ccc', 
-                paddingBottom: '8px' 
-              }}
-            >
-              <p style={{ margin: 0 }}>{msg.content}</p>
-              <small>
-                {new Date(msg.created_at).toLocaleString('vi-VN')}
-              </small>
-            </li>
-          ))}
-        </ul>
-      )}
+        {error && (
+          <div style={{ color: 'red', marginBottom: '10px' }}>
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit}>
+          <textarea
+            value={content}
+            onChange={handleChange}
+            rows={4}
+            disabled={isLoading}
+            placeholder="Viết gì đó (ẩn danh)..."
+            style={{ 
+              width: '100%', 
+              marginBottom: '10px',
+              resize: 'vertical'
+            }}
+          />
+          
+          <button 
+            type="submit" 
+            disabled={isLoading || !content.trim()}
+            style={{ 
+              padding: '8px 16px',
+              opacity: isLoading || !content.trim() ? 0.6 : 1
+            }}
+          >
+            {isLoading ? 'Đang gửi...' : 'Gửi'}
+          </button>
+        </form>
+
+        {isLoading && messages.length === 0 ? (
+          <div>Đang tải tin nhắn...</div>
+        ) : (
+          <ul style={{ listStyle: 'none', paddingLeft: 0, marginTop: '20px' }}>
+            {messages.map((msg) => (
+              <li 
+                key={msg.id} 
+                style={{ 
+                  marginBottom: '15px', 
+                  borderBottom: '1px solid #ccc', 
+                  paddingBottom: '8px' 
+                }}
+              >
+                <p style={{ margin: 0 }}>{msg.content}</p>
+                <small>
+                  {new Date(msg.created_at).toLocaleString('vi-VN')}
+                </small>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </div>
   );
 }
