@@ -30,12 +30,12 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
-
+        {/* fake sau edit tiếng anh */}
         {/* Copyright section */}
         <div className={`${styles.footerSection} ${styles.copyright}`}>
-          <p>&copy; 2024 Công Ty S02. All rights reserved.</p>
-          <p>Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM</p>
-          <p>Email: VTT-S02.com</p>
+          <p>&copy; 2024 Team S02. All rights reserved.</p>
+          <p>Địa chỉ: Tuệ Tĩnh Lai Cách Cẩm Giàng Hải Dương</p>
+          <p>Email: hotro@hacnil.com</p>
         </div>
       </div>
     </footer>

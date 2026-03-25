@@ -32,13 +32,13 @@ const Footer: React.FC = () => {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebook /> Facebook
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/tieens__cute" target="_blank" rel="noopener noreferrer">
               <FaTwitter /> Twitter
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://linkedin.com/in/tien-vu-79038621a" target="_blank" rel="noopener noreferrer">
               <FaLinkedin /> LinkedIn
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/_hacnil" target="_blank" rel="noopener noreferrer">
               <FaInstagram /> Instagram
             </a>
           </div>
@@ -46,10 +46,10 @@ const Footer: React.FC = () => {
 
         {/* Contact Information */}
         <div className={`${styles.footerSection} ${styles.contactInfo}`}>
-          <p>&copy; 2024 Công Ty S02.
+          <p>&copy; 2024 Team S02.
             <br/> All rights reserved.</p>
-          <p>Địa chỉ: 123 Đường ABC, Quận XYZ, Thành phố HCM</p>
-          <p>Email: VTT-S02.com</p>
+          <p>Địa chỉ: Tuệ Tĩnh Lai Cách Cẩm Giàng Hải Dương</p>
+          <p>Email: HoTro@hacnil.com</p>
         </div>
       </div>
     </footer>

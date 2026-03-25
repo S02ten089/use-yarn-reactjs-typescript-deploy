@@ -35,8 +35,8 @@ const BoxLG: React.FC<MobileMenuToggleProps> = ({ toggleMenu }) => {
 };
 
   const handleShare = () => {
-    const url = 'http://www.vtt-s02.com/';
-    const text = `Page VTT-S02.com\n------------------\n${loggedInUser}`;
+    const url = 'http://www.hacnil.com/';
+    const text = `Page hacnil.com\n------------------\n${loggedInUser}`;
     const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
     window.open(facebookShareUrl, '_blank');
   };

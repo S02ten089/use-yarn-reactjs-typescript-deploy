@@ -24,7 +24,7 @@ type MobileMenuToggleProps = {
 const MobileMenuToggle: React.FC<MobileMenuToggleProps> = ({ toggleMenu }) => {
   // Hàm xử lý chia sẻ
   const handleShare = () => {
-    const url = 'http://www.vtt-s02.com/'; // Đường dẫn trang web cần chia sẻ
+    const url = 'http://www.hacnil.com/'; // Đường dẫn trang web cần chia sẻ
     const text = "Check out this page!"; // Nội dung chia sẻ
     const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
     const twitterShareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;

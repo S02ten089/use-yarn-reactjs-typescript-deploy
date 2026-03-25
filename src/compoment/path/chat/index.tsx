@@ -35,7 +35,7 @@ export default function AnonymousBoard() {
       setIsLoading(true);
       setError(null);
       const response = await axios.get<Message[]>(
-        `${API_CONFIG.BASE_URL}/chat/${API_CONFIG.ENDPOINTS.GET_MESSAGES}`
+        `${API_CONFIG.BASE_URL}/mess/chat/${API_CONFIG.ENDPOINTS.GET_MESSAGES}`
       );
       setMessages(response.data);
     } catch (error) {
@@ -53,7 +53,7 @@ export default function AnonymousBoard() {
       setIsLoading(true);
       setError(null);
       await axios.post(
-        `${API_CONFIG.BASE_URL}/chat/${API_CONFIG.ENDPOINTS.POST_MESSAGE}`,
+        `${API_CONFIG.BASE_URL}/mess/chat/${API_CONFIG.ENDPOINTS.POST_MESSAGE}`,
         { content },
         {
           headers: {

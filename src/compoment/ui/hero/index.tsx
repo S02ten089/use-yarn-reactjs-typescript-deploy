@@ -12,7 +12,8 @@ import styles from './hero.module.scss';
 const HeroSection: React.FC = () => {
   
   const handleStar = () => {
-    alert("Đang đợi nội dung cập nhật! ")
+    window.location.href = "/services";
+    // alert("Đang đợi nội dung cập nhật! ")
   };
   return (
     <Box
@@ -67,15 +68,19 @@ const HeroSection: React.FC = () => {
             zIndex={2}
           >
             {/* Hero Heading */}
-            <Heading as="h1" size="3xl" fontWeight="bold" lineHeight="shorter"
+            <Heading as="h1" 
+            // size="3xl" 
+            fontWeight="bold" lineHeight="shorter"
             className={styles.cssMobilehero}
             >
-              Welcome to Our Digital World
+              Nơi khởi đầu cho hành trình số của bạn
             </Heading>
 
             {/* Hero Subheading */}
-            <Text fontSize="lg" color="gray.200">
-              Providing cutting-edge digital solutions for businesses of all sizes.
+            <Text 
+            // fontSize="lg"
+            color="gray.200">
+              Chúng tôi mang đến những giải pháp phù hợp, giúp bạn từng bước xây dựng và phát triển trong môi trường công nghệ hiện đại.
             </Text>
 
             {/* Call-to-action Buttons */}
@@ -85,11 +90,11 @@ const HeroSection: React.FC = () => {
               backgroundColor={"#81E6D9"}
               color={"black"}
               >
-                Get Started
+                Cùng bắt đầu nào!
               </Button>
               <Button colorScheme="whiteAlpha" size="lg" variant="outline"
               color={"rgba(255, 255, 255, 0.08)"}>
-                Learn More
+                Tìm Hiểu Thêm
               </Button>
             </Stack>
           </VStack>

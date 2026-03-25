@@ -9,9 +9,12 @@ const IntroducePage: React.FC = () => {
     <Box className={styles.container}>
       {/* Navbar */}
       <HStack className={styles.navbar}>
-        <Heading as="h1" className={styles.logo}>Img Avatar Tien</Heading>
+        <Heading as="h1" className={styles.logo}>
+          {/* Img Avatar Tien */}
+
+        </Heading>
         <HStack className={styles.navLinks}>
-          <Link href="#">WORK</Link>
+          <Link href="/work">WORK</Link>
           <Link href="/about">ABOUT ME</Link>
           <Link href="/lienhe">CONTACT</Link>
         </HStack>
@@ -40,13 +43,13 @@ const IntroducePage: React.FC = () => {
           Whether you're looking to build a new brand identity, enhance your website, or develop a unique digital experience, I bring expertise, creativity, and enthusiasm to every project. Let’s collaborate to bring your vision to life and create a memorable digital experience that stands out in todays competitive market.
           </Text>
           <Button className={styles.contactButton}>Get in Touch</Button>
-          <Text className={styles.email}>VTT-S02.com</Text>
+          <Text className={styles.email}>hacnil.com</Text>
 
           {/* Social Icons */}
           <HStack spacing={4} className={styles.socialIcons}>
             <Link href="#" aria-label="Facebook">🌐</Link>
-            <Link href="#" aria-label="Instagram">📷</Link>
-            <Link href="#" aria-label="Twitter">🐦</Link>
+            <Link href="https://instagram.com/_hacnil" aria-label="Instagram">📷</Link>
+            <Link href="https://twitter.com/tieens__cute" aria-label="Twitter">🐦</Link>
           </HStack>
         </VStack>
       </HStack>
