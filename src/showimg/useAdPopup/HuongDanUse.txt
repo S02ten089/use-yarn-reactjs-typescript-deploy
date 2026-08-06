@@ -1,0 +1,14 @@
+import { useAdPopup } from "./useAdPopup";
+import AdPopup from "./AdPopup";
+
+export default function Home() {
+  const { isOpen, openAd, closeAd } = useAdPopup();
+
+  return (
+    <>
+      <button onClick={openAd}>Mở quảng cáo</button>
+
+      <AdPopup isOpen={isOpen} onClose={closeAd} />
+    </>
+  );
+}

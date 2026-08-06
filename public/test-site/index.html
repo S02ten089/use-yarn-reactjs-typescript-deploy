@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hacnil Discord - Static Copy</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #06080f;
+      color: #f3f4f6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; line-height: 1.5; }
+    a { color: #7dd3fc; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .page { width: min(1200px, 100%); margin: 0 auto; padding: 24px; }
+    .topbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .brand { font-size: 1.8rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav { display: flex; flex-wrap: wrap; gap: 14px; }
+    .nav a { padding: 10px 16px; background: rgba(15,23,42,.64); border-radius: 999px; font-size: .95rem; }
+    .hero { padding: 40px; border: 1px solid rgba(148,163,184,0.18); border-radius: 24px; background: linear-gradient(180deg, rgba(15,23,42,.95), rgba(2,14,29,.95)); margin-bottom: 32px; }
+    .hero h1 { margin: 0 0 12px; font-size: clamp(2.3rem, 4vw, 4rem); letter-spacing: -0.06em; }
+    .hero p { max-width: 760px; margin: 0 0 20px; color: #cbd5e1; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 14px 22px; border-radius: 999px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+    .btn-primary { background: #22c55e; color: #020617; }
+    .btn-secondary { background: #0f172a; color: #e2e8f0; border: 1px solid rgba(148,163,184,.24); }
+    .btn:hover { transform: translateY(-1px); }
+    .section { margin-bottom: 40px; }
+    .section h2 { font-size: 1.6rem; margin-bottom: 14px; }
+    .grid { display: grid; gap: 18px; }
+    .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cards { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card { padding: 22px; border-radius: 24px; background: rgba(15,23,42,.82); border: 1px solid rgba(148,163,184,.12); }
+    .card h3 { margin-top: 0; }
+    .card p { color: #cbd5e1; }
+    .highlight { color: #7dd3fc; }
+    .footer { border-top: 1px solid rgba(148,163,184,.14); padding-top: 24px; color: #94a3b8; display: grid; gap: 16px; }
+    .footer-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+    .footer-nav a { color: #cbd5e1; }
+    .banner { display: grid; gap: 18px; padding: 22px; border-radius: 24px; background: linear-gradient(180deg, rgba(14,42,68,.72), rgba(2,14,29,.95)); border: 1px solid rgba(34,197,94,.28); }
+    .badge { display: inline-flex; gap: 10px; align-items: center; padding: 8px 14px; border-radius: 999px; background: rgba(56,189,248,.16); color: #dbeafe; font-size: .9rem; }
+    .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+    .stat { padding: 16px; border-radius: 20px; background: rgba(15,23,42,.72); text-align: center; border: 1px solid rgba(148,163,184,.1); }
+    .stat strong { display: block; font-size: 1.7rem; margin-bottom: 6px; color: #7dd3fc; }
+    .image-block { border-radius: 24px; overflow: hidden; background: #0f172a; }
+    .image-block img { width: 100%; height: auto; display: block; }
+    @media (max-width: 860px) {
+      .two-col { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr; }
+      .topbar { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">hacnil DISCORD</div>
+      <nav class="nav">
+        <a href="https://hacnil.com/discord">Trang chủ</a>
+        <a href="https://hacnil.com/discord/events">Sự kiện</a>
+        <a href="https://hacnil.com/discord/minigames">Minigame</a>
+        <a href="https://hacnil.com/discord/tournament">Giải đấu</a>
+        <a href="https://discord.gg/hacnil" target="_blank" rel="noreferrer">Tham gia</a>
+      </nav>
+    </header>
+
+    <section class="hero section">
+      <div class="badge">Discord | Game | Sự kiện</div>
+      <h1>Chào mừng bạn đến với hacnil Discord</h1>
+      <p>Đây là cộng đồng Discord gaming lớn mạnh với event liên tục, minigame hàng ngày và giải thưởng hấp dẫn.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="https://discord.gg/hacnil" target="_blank" rel="noreferrer">Tham gia ngay</a>
+        <a class="btn btn-secondary" href="https://hacnil.com/discord/events">Xem sự kiện</a>
+      </div>
+    </section>
+
+    <section class="section two-col">
+      <div class="card">
+        <h2>Giải Đấu Custom TFT hacnil Tháng 4</h2>
+        <p>Giải đấu quy tụ 32 cao thủ cờ nhân phẩm tranh tài, tổng giải thưởng lên đến <strong class="highlight">700k VND</strong>.</p>
+        <p><a href="https://hacnil.com/discord/tournament/giai-dau-custom-tft-hacnil-thang-4">Xem chi tiết giải đấu →</a></p>
+      </div>
+      <div class="card">
+        <h2>Hoạt động mới nhất</h2>
+        <p>Tin tức mới, event và role độc quyền được cập nhật liên tục trong cộng đồng Discord hacnil.</p>
+        <p><a href="https://hacnil.com/discord/events">Xem toàn bộ sự kiện →</a></p>
+      </div>
+    </section>
+
+    <section class="section cards">
+      <article class="card">
+        <h3>hacnil EVENT: TỰ HÀO VIỆT NAM</h3>
+        <p>Thời gian: <strong>24/04/2026 – 01/05/2026</strong>. Tham gia bằng cách ghép ảnh cá nhân vào mẫu CapCut và đăng bài cùng hashtag <strong>#GiaiPhongMienNam</strong>.</p>
+        <p>Giải thưởng: <strong>400k + role custom</strong>, <strong>200k</strong>, <strong>100k</strong>.</p>
+        <p><a href="https://discord.gg/hacnil">Tham gia Discord</a></p>
+      </article>
+      <article class="card">
+        <h3>EVENT VOTE ẢNH NỮ</h3>
+        <p>Không gian vote thư giãn với giải thưởng hấp dẫn đến <strong>3.000.000 OWO Cash</strong> và role vĩnh viễn.</p>
+        <p>Thời gian: <strong>01/04/2026 – 03/04/2026</strong>.</p>
+      </article>
+      <article class="card">
+        <h3>ROLE KING ROOM</h3>
+        <p>Top 10 treo room mỗi hai tuần được trao role VIP @KING ROOM kèm trải nghiệm phòng nhạc riêng.</p>
+        <p><a href="https://discord.gg/hacnil">Xem thêm</a></p>
+      </article>
+    </section>
+
+    <section class="section banner">
+      <div class="grid two-col">
+        <div>
+          <h2>Tham gia cộng đồng</h2>
+          <p>Hơn <strong>8.600 thành viên</strong> và <strong>13 staff</strong> tạo nên không khí sôi động, thân thiện và đầy quà tặng.</p>
+          <div class="stats">
+            <div class="stat"><strong>8.664+</strong> Thành viên</div>
+            <div class="stat"><strong>13</strong> Staff</div>
+            <div class="stat"><strong>4</strong> Minigame/ngày</div>
+          </div>
+        </div>
+        <div class="image-block">
+          <img src="https://hacnil.com/storage/uploads/img.jpg" alt="hacnil Discord Event" />
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>
+        <strong>Discord hacnil</strong>
+        <p>Cộng đồng game, giải đấu và event Discord tại Việt Nam.</p>
+      </div>
+      <div class="footer-nav">
+        <a href="https://hacnil.com/discord/events">Sự kiện</a>
+        <a href="https://hacnil.com/discord/minigames">Minigame</a>
+        <a href="https://hacnil.com/discord/staff">Đội ngũ</a>
+        <a href="https://hacnil.com/discord/tournament">Giải đấu</a>
+        <a href="https://discord.gg/hacnil">Discord</a>
+      </div>
+      <p>© 2026 hacnil.com. All rights reserved.</p>
+      <p>Designed & Developed by <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">hacnil</a></p>
+    </footer>
+  </div>
+</body>
+</html>

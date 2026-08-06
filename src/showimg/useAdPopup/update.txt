@@ -1,0 +1,20 @@
+hiện sau vài s
+useEffect(() => {
+  const timer = setTimeout(() => {
+    openAd();
+  }, 3000);
+
+  return () => clearTimeout(timer);
+}, []);
+chỉ hiện 1 lần
+useEffect(() => {
+  const shown = localStorage.getItem("ad_shown");
+
+  if (!shown) {
+    openAd();
+    localStorage.setItem("ad_shown", "true");
+  }
+}, []);
+click ra ngoài để đóng 
+<motion.div className={styles.overlay} onClick={onClose}>
+  <motion.div onClick={(e) => e.stopPropagation()}>

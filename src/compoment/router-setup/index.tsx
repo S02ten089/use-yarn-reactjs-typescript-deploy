@@ -18,6 +18,7 @@ import axios from 'axios';
   const AI = React.lazy(()=> import('../path/AI/index'));
   const EditPage = React.lazy(()=> import('../path/EditPage/index'));
   const Chat = React.lazy(()=> import('../path/chat/index'));
+  const Mkt = React.lazy(() => import('../path/mkt/mkt'));
 
   const ServiceCard = React.lazy(() => import('../Service/Sample/index'));
   const Card = React.lazy(() => import('../path/card/routerCard'));
@@ -25,6 +26,7 @@ import axios from 'axios';
   const TestLogin = React.lazy(() => import('../path/test/home/homeLogin'));
   const ProductList = React.lazy(() => import('../path/test/paths/ProductList'));
   const TestHome = React.lazy(() => import('../path/test/home/Home'));
+  const TestLayoutPage = React.lazy(() => import('../path/test/app/layout'));
   
   const RouterSetUp: React.FC = () => {
     const [numberApi, setNumberApi] = useState<number | null>(null);
@@ -69,8 +71,10 @@ import axios from 'axios';
                 <Route path='/card/*' element={<Card/>}/>
 
                 <Route path='/test' element={<TestHome/>}/>
+                <Route path='/test-layout' element={<TestLayoutPage/>}/>
                 <Route path='/testLogin' element={<TestLogin/>}/>
                 <Route path='/products' element={<ProductList/>}/>
+                <Route path='/mkt' element={<Mkt/>}/>
 
                 <Route path='/AI/OX' element={<AI/>}/>
 
